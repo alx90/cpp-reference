@@ -1,0 +1,2871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>/home/alx/eclipse-workspace/codesdope/docs/.c++_notes.md.html</title>
+
+
+<style type="text/css">
+body {
+	color: #333;
+	font: 13px/1.4 "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	background: transparent;
+	color: #4183c4;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0 none;
+	text-decoration: underline;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+mark {
+	background: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0 none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace,monospace;
+	font-size: 1em;
+}
+
+pre {
+	overflow: auto;
+	font: 12px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.markdown-body {
+	padding: 30px;
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+.markdown-body>*:first-child {
+	margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+.markdown-body .absent {
+	color: #c00;
+}
+
+.markdown-body .anchor {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	padding-right: 6px;
+	padding-left: 30px;
+	margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 16px;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+	display: none;
+	color: #000;
+	vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	padding-left: 8px;
+	margin-left: -30px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+	display: inline-block;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+	font-size: inherit;
+}
+
+.markdown-body h1 {
+	padding-bottom: 0.3em;
+	font-size: 2.25em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+	padding-bottom: 0.3em;
+	font-size: 1.75em;
+	line-height: 1.225;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+	font-size: 1.5em;
+	line-height: 1.43;
+}
+
+.markdown-body h4 {
+	font-size: 1.25em;
+}
+
+.markdown-body h5 {
+	font-size: 1em;
+}
+
+.markdown-body h6 {
+	font-size: 1em;
+	color: #777;
+}
+
+.markdown-body p,.markdown-body blockquote,
+.markdown-body ul,.markdown-body ol,
+.markdown-body dl,.markdown-body table,
+.markdown-body pre {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.markdown-body hr {
+	height: 4px;
+	padding: 0;
+	margin: 16px 0;
+	background-color: #e7e7e7;
+	border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+	padding-left: 2em;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.markdown-body li>p {
+	margin-top: 16px;
+}
+
+.markdown-body dl {
+	padding: 0;
+}
+
+.markdown-body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.markdown-body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+	padding: 0 15px;
+	color: #777;
+	border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+	margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+.markdown-body table {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	word-break: normal;
+	word-break: keep-all;
+}
+
+.markdown-body table th {
+	font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+	padding: 6px 13px;
+	border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+
+.markdown-body img {
+	max-width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.markdown-body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+
+.markdown-body span.frame span img {
+	display: block;
+	float: left;
+}
+
+.markdown-body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: #333;
+}
+
+.markdown-body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.markdown-body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.markdown-body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+.markdown-body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+	margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body code,.markdown-body tt {
+	padding: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(0,0,0,0.04);
+	border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after,
+.markdown-body tt:before,
+.markdown-body tt:after {
+	letter-spacing: -0.2em;
+	content: "\00a0";
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+	display: none;
+}
+
+.markdown-body del code {
+	text-decoration: inherit;
+}
+
+.markdown-body pre>code {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+.markdown-body .highlight {
+	margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+.markdown-body pre {
+	word-wrap: normal;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+	display: inline;
+	max-width: initial;
+	padding: 0;
+	margin: 0;
+	overflow: initial;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after,
+.markdown-body pre tt:before,
+.markdown-body pre tt:after {
+	content: normal;
+}
+
+.highlight .pl-coc,
+.highlight .pl-entl,
+.highlight .pl-entm,
+.highlight .pl-eoa,
+.highlight .pl-mai .pl-sf,
+.highlight .pl-mm,
+.highlight .pl-pdv,
+.highlight .pl-sc,
+.highlight .pl-som,
+.highlight .pl-sr,
+.highlight .pl-v,
+.highlight .pl-vpf {
+	color: #0086b3;
+}
+.highlight .pl-eoac,
+.highlight .pl-mdht,
+.highlight .pl-mi1,
+.highlight .pl-mri,
+.highlight .pl-va,
+.highlight .pl-vpu {
+	color: #008080;
+}
+.highlight .pl-c,
+.highlight .pl-pdc {
+	color: #b4b7b4;
+	font-style: italic;
+}
+.highlight .pl-k,
+.highlight .pl-ko,
+.highlight .pl-kolp,
+.highlight .pl-mc,
+.highlight .pl-mr,
+.highlight .pl-ms,
+.highlight .pl-s,
+.highlight .pl-sok,
+.highlight .pl-st {
+	color: #6e5494;
+}
+.highlight .pl-ef,
+.highlight .pl-enf,
+.highlight .pl-enm,
+.highlight .pl-entc,
+.highlight .pl-eoi,
+.highlight .pl-sf,
+.highlight .pl-smc {
+	color: #d12089;
+}
+.highlight .pl-ens,
+.highlight .pl-eoai,
+.highlight .pl-kos,
+.highlight .pl-mh .pl-pdh,
+.highlight .pl-mp,
+.highlight .pl-pde,
+.highlight .pl-stp {
+	color: #458;
+}
+.highlight .pl-enti {
+	color: #d12089;
+	font-weight: bold;
+}
+.highlight .pl-cce,
+.highlight .pl-enc,
+.highlight .pl-kou,
+.highlight .pl-mq {
+	color: #f93;
+}
+.highlight .pl-mp1 .pl-sf {
+	color: #458;
+	font-weight: bold;
+}
+.highlight .pl-cos,
+.highlight .pl-ent,
+.highlight .pl-md,
+.highlight .pl-mdhf,
+.highlight .pl-ml,
+.highlight .pl-pdc1,
+.highlight .pl-pds,
+.highlight .pl-s1,
+.highlight .pl-scp,
+.highlight .pl-sol {
+	color: #df5000;
+}
+.highlight .pl-c1,
+.highlight .pl-cn,
+.highlight .pl-pse,
+.highlight .pl-pse .pl-s2,
+.highlight .pl-vi {
+	color: #a31515;
+}
+.highlight .pl-mb,
+.highlight .pl-pdb {
+	color: #df5000;
+	font-weight: bold;
+}
+.highlight .pl-mi,
+.highlight .pl-pdi {
+	color: #6e5494;
+	font-style: italic;
+}
+.highlight .pl-ms1 {
+	background-color: #f5f5f5;
+}
+.highlight .pl-mdh,
+.highlight .pl-mdi {
+	font-weight: bold;
+}
+.highlight .pl-mdr {
+	color: #0086b3;
+	font-weight: bold;
+}
+.highlight .pl-s2 {
+	color: #333;
+}
+.highlight .pl-ii {
+	background-color: #df5000;
+	color: #fff;
+}
+.highlight .pl-ib {
+	background-color: #f93;
+}
+.highlight .pl-id {
+	background-color: #a31515;
+	color: #fff;
+}
+.highlight .pl-iu {
+	background-color: #b4b7b4;
+}
+.highlight .pl-mo {
+	color: #969896;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+function getDocumentScrollTop() 
+{
+   var res = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
+   // alert(res);
+   return res;
+}
+
+function setDocumentScrollTop(ypos) 
+{
+	window.scrollTo(0, ypos);
+}
+
+</script>
+
+
+</head>
+<body class="markdown-body">
+<h1> <a id="basic-reference" class="anchor" href="#basic-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC REFERENCE</h1> 
+<h3> <a id="the-main-function" class="anchor" href="#the-main-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The main() function</h3> 
+<p>The execution of <strong>every C++ program starts from the main()</strong> function. <strong>All C++ programs must have a main()</strong> function.</p> 
+<p>Here is a simple main() example which takes an input from the user and prints it onscreen:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">int</span> n; <span class="pl-c"><span class="pl-c">//</span> var declaration</span>
+	std::cin &gt;&gt; n; <span class="pl-c"><span class="pl-c">//</span> waits for input and fills n</span>
+	std::cout &lt;&lt; n; <span class="pl-c"><span class="pl-c">//</span> print n to screen</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p><em>notes:</em></p> 
+<ul> 
+ <li> <strong>std</strong> stands for the 'standard' namespace, a namespace is simply a container into wich you can define both functions and variables. The <strong>std</strong> namespace resides into the <strong>iostream</strong> libraqry, which is included using the <strong>#include </strong> syntax.</li> 
+ <li> <strong>cout</strong> is a function defined into <strong>std</strong> namespace. Functions or variables inside namespaces can be accessed using the <strong>::</strong> syntax.</li> 
+ <li> <strong>&lt;&lt; operator is the output operator</strong> that passes <em>Hello World</em> string into the <strong>std::cout</strong> function.</li> 
+</ul> 
+<h3> <a id="comments" class="anchor" href="#comments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comments</h3> 
+<ul> 
+ <li> <strong>//</strong> is used for single-line comments</li> 
+ <li> <strong>/* */</strong> is used for multi-line comments</li> 
+</ul> 
+<h3> <a id="info" class="anchor" href="#info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Info</h3> 
+<ul> 
+ <li>C++ is a case-sensitive language</li> 
+ <li>unnecessary whitespaces and new lines are ignored just like in java</li> 
+</ul> 
+<h3> <a id="booleans-and-conditions-evaluation" class="anchor" href="#booleans-and-conditions-evaluation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Booleans and conditions evaluation</h3> 
+<p>Unlike in C, in C++ booleans have a dedicated data type, but underneath they are still treated like simple numeric values (0 and 1).<br /> Considering this, all conditions in C++ can be written using both booleans or numbers, anyway they will always be evaluated underneath like <strong>false if equal to 0</strong> and <strong>true if different from 0</strong>. Ex:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+<span class="pl-k">if</span>(<span class="pl-c1">false</span>)	<span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-k">if</span>(<span class="pl-c1">true</span>)	<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-k">if</span>(<span class="pl-c1">0</span>)		<span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-k">if</span>(<span class="pl-c1">1</span>)		<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-k">if</span>(<span class="pl-c1">2</span>)		<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-k">if</span>(<span class="pl-c1">0</span> == <span class="pl-c1">false</span>)	<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-k">if</span>(<span class="pl-c1">0</span> == <span class="pl-c1">true</span>)	<span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-k">if</span>(<span class="pl-c1">1</span> == <span class="pl-c1">false</span>)	<span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-k">if</span>(<span class="pl-c1">1</span> == <span class="pl-c1">true</span>)	<span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-k">if</span>(<span class="pl-c1">2</span> == <span class="pl-c1">false</span>)	<span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-k">if</span>(<span class="pl-c1">2</span> == <span class="pl-c1">true</span>)	<span class="pl-c"><span class="pl-c">//</span> false</span>
+cout &lt;&lt; <span class="pl-c1">false</span>	<span class="pl-c"><span class="pl-c">//</span> 0</span>
+cout &lt;&lt; <span class="pl-c1">true</span>	<span class="pl-c"><span class="pl-c">//</span> 1</span></pre>
+</div> 
+<h1> <a id="keywords" class="anchor" href="#keywords" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>keywords</h1> 
+<p>In any language keywords are reserved words with a special meaning to each of them. This is the list of C++ keywords:</p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th></th> 
+   <th></th> 
+   <th></th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>asm</td> 
+   <td>auto</td> 
+   <td>bool</td> 
+  </tr> 
+  <tr> 
+   <td>break</td> 
+   <td>case</td> 
+   <td>catch</td> 
+  </tr> 
+  <tr> 
+   <td>char</td> 
+   <td>class</td> 
+   <td>const</td> 
+  </tr> 
+  <tr> 
+   <td>const_cast</td> 
+   <td>continue</td> 
+   <td>default</td> 
+  </tr> 
+  <tr> 
+   <td>delete</td> 
+   <td>do</td> 
+   <td>double</td> 
+  </tr> 
+  <tr> 
+   <td>dynamic_cast</td> 
+   <td>else</td> 
+   <td>enum</td> 
+  </tr> 
+  <tr> 
+   <td>explicit</td> 
+   <td>export</td> 
+   <td>extern</td> 
+  </tr> 
+  <tr> 
+   <td>false</td> 
+   <td>float</td> 
+   <td>for</td> 
+  </tr> 
+  <tr> 
+   <td>friend</td> 
+   <td>goto</td> 
+   <td>if</td> 
+  </tr> 
+  <tr> 
+   <td>inline</td> 
+   <td>int</td> 
+   <td>long</td> 
+  </tr> 
+  <tr> 
+   <td>mutable</td> 
+   <td>namespace</td> 
+   <td>new</td> 
+  </tr> 
+  <tr> 
+   <td>operator</td> 
+   <td>private</td> 
+   <td>protected</td> 
+  </tr> 
+  <tr> 
+   <td>public</td> 
+   <td>register</td> 
+   <td>reinterpret_cast</td> 
+  </tr> 
+  <tr> 
+   <td>return</td> 
+   <td>short</td> 
+   <td>signed</td> 
+  </tr> 
+  <tr> 
+   <td>sizeof</td> 
+   <td>static</td> 
+   <td>static_cast</td> 
+  </tr> 
+  <tr> 
+   <td>struct</td> 
+   <td>switch</td> 
+   <td>template</td> 
+  </tr> 
+  <tr> 
+   <td>this</td> 
+   <td>throw</td> 
+   <td>true</td> 
+  </tr> 
+  <tr> 
+   <td>try</td> 
+   <td>typedef</td> 
+   <td>typeid</td> 
+  </tr> 
+  <tr> 
+   <td>typename</td> 
+   <td>union</td> 
+   <td>unsigned</td> 
+  </tr> 
+  <tr> 
+   <td>using</td> 
+   <td>virtual</td> 
+   <td>void</td> 
+  </tr> 
+  <tr> 
+   <td>volatile</td> 
+   <td>wchar_t</td> 
+   <td>while</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<h3> <a id="using" class="anchor" href="#using" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>using</h3> 
+<p>using keyword can be used to alias a namespace or a function. In this example after the <strong>using</strong> definition, <strong>std</strong> namespace functions can be invoked without the need to specify the namespace itself:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-c"><span class="pl-c">//</span> now I can call 'cout' instead of 'std::cout' and so on</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Hello World<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>This is my second line<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="friend" class="anchor" href="#friend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>friend</h3> 
+<p>friend keyword is used to grant the access to the private and protected members of a class to another class or function:</p> 
+<ul> 
+ <li> <strong>friend function</strong>: when declaring a class we can mark a function as <em>friend</em> to grant it the access to all private and protected members of the class itself 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+ #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ using namespace std;
+ class Temperature {
+ 	<span class="pl-k">int</span> celsius;
+ 	public:
+ 		<span class="pl-c1">Temperature</span>() {
+ 			celsius = <span class="pl-c1">0</span>;
+ 		}
+ 		friend <span class="pl-k">int</span> <span class="pl-smi">temp</span>( Temperature );   <span class="pl-c"><span class="pl-c">//</span> declaring friend function</span>
+ };
+ <span class="pl-k">int</span> <span class="pl-en">temp</span>( Temperature t ) {	<span class="pl-c"><span class="pl-c">//</span> friend function definition</span>
+ 	t.<span class="pl-smi">celsius</span> = <span class="pl-c1">40</span>;	<span class="pl-c"><span class="pl-c">//</span> direct access to private member celsius</span>
+ 	<span class="pl-k">return</span> t.<span class="pl-smi">celsius</span>;
+ }
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	Temperature <span class="pl-c1">tm</span>;
+ 	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Temperature in celsius : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-c1">temp</span>( <span class="pl-c1">tm</span> ) &lt;&lt; endl;
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> </li> 
+ <li> <strong>friend class</strong>: we can make a class B <em>friend</em> of another class A in order to grant to B the access of to the members of A: 
+  <div class="highlight highlight-source-c">
+   <pre> class A {
+     friend class B;	<span class="pl-c"><span class="pl-c">//</span> B is declared as a friend of A</span>
+ };
+ class B {
+ 
+ };
+ 
+ <span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+ #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ using namespace std;
+ class Square {
+ 	friend class Rectangle;      <span class="pl-c"><span class="pl-c">//</span> declaring Rectangle as friend class of Square</span>
+ 	<span class="pl-k">int</span> side;	<span class="pl-c"><span class="pl-c">//</span> private data member</span>
+ 	public:
+ 		<span class="pl-c1">Square</span> (<span class="pl-k">int</span> s) {	<span class="pl-c"><span class="pl-c">//</span> Square constructor</span>
+ 			side = s;
+ 		}
+ };
+ class Rectangle {
+ 	<span class="pl-k">int</span> length;
+ 	<span class="pl-k">int</span> breadth;
+ 	public:
+ 		<span class="pl-k">void</span> <span class="pl-smi">shape</span>(Square a) {
+ 			length = a.<span class="pl-smi">side</span>;	<span class="pl-c"><span class="pl-c">//</span> being Rectangle a friend of Square it can access private members from Square objects</span>
+ 			breadth = a.<span class="pl-smi">side</span>;
+ 		}
+ };
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	Square <span class="pl-smi">square</span>(<span class="pl-c1">5</span>);
+ 	Rectangle rectangle;
+ 	rectangle.<span class="pl-c1">shape</span>(square);
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> </li> 
+</ul> 
+<h3> <a id="typedef" class="anchor" href="#typedef" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>typedef</h3> 
+<p>Is a keyword used to assign an alias to an existing data type. It can be used for struct and union too.</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.1</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">typedef</span> <span class="pl-k">unsigned</span> <span class="pl-k">int</span> ui;	<span class="pl-c"><span class="pl-c">//</span> giving the &quot;unsigned int&quot; data type the alias &quot;ui&quot;</span>
+	ui i = <span class="pl-c1">5</span>, j = <span class="pl-c1">8</span>;		<span class="pl-c"><span class="pl-c">//</span> defining unsigned integers like &quot;ui&quot;</span>
+	std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>i = <span class="pl-pds">&quot;</span></span> &lt;&lt; i &lt;&lt; std::endl;
+	std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>j = <span class="pl-pds">&quot;</span></span> &lt;&lt; j &lt;&lt; std::endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.2</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">typedef</span> <span class="pl-k">struct</span> student {	<span class="pl-c"><span class="pl-c">//</span> giving the struct &quot;student&quot; the alias &quot;st&quot;</span>
+  	<span class="pl-k">int</span> roll_no;
+  	<span class="pl-k">char</span> name[<span class="pl-c1">30</span>];
+  	<span class="pl-k">int</span> phone_number;
+} st;
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	st p1;	<span class="pl-c"><span class="pl-c">//</span> using the alias for student</span>
+	p1.<span class="pl-smi">roll_no</span> = <span class="pl-c1">1</span>; 
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>roll no : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">roll_no</span> &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="variables-and-literals" class="anchor" href="#variables-and-literals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VARIABLES AND LITERALS</h1> 
+<h3> <a id="variables-initialization" class="anchor" href="#variables-initialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variables Initialization</h3> 
+<p>An uninitialized variable is the one to which we have not assigned any value. Unlike some programming languages where a variable which has not been assigned any value takes a value zero, <strong>an uninitialized variable in C++ by default takes some garbage value</strong>.</p> 
+<h3> <a id="data-types" class="anchor" href="#data-types" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Types</h3> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Type</th> 
+   <th>Keyword</th> 
+   <th>Size (bytes)</th> 
+   <th>Range of Value</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>Integer</td> 
+   <td>int</td> 
+   <td>4</td> 
+   <td>-2,147,483,648 to 2,147,483,647</td> 
+  </tr> 
+  <tr> 
+   <td>Floating point</td> 
+   <td>float</td> 
+   <td>4</td> 
+   <td>1.8E-38 to 3.4E+38</td> 
+  </tr> 
+  <tr> 
+   <td>Double floating point</td> 
+   <td>double</td> 
+   <td>8</td> 
+   <td>2.2E-308 to 1.8E+308</td> 
+  </tr> 
+  <tr> 
+   <td>Character</td> 
+   <td>char</td> 
+   <td>1</td> 
+   <td>–128 to 127</td> 
+  </tr> 
+  <tr> 
+   <td>Boolean</td> 
+   <td>bool</td> 
+   <td>1</td> 
+   <td>false or true</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<ul> 
+ <li> <em>notes:</em><br /> 
+  <ul> 
+   <li>The sizes of variables might change depending on the compiler and the computer you are using. Size of the variables will be different for 32 bit and 64 bit compilers.</li> 
+   <li> <strong>bool</strong> variables are filled with literals 'true' or 'false' but they evaluate to 0 or 1.</li> 
+   <li> <strong>char</strong> variables are assigned using 'x' literals and are internally managed with the respective 8bit ASCII code [using the <em>int(ch)</em> function, you can get the ASCII code of ch]</li> 
+  </ul> </li> 
+</ul> 
+<h3> <a id="leftright-values-and-literals" class="anchor" href="#leftright-values-and-literals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Left/Right Values and Literals</h3> 
+<p>A C++ assignment is identified by the following members</p> 
+<div class="highlight highlight-source-c">
+ <pre>leftValue = rightValue</pre>
+</div> 
+<ul> 
+ <li> <strong>leftValue</strong> is a value which has an address and is usually a variable.</li> 
+ <li> <strong>rightValue</strong> is the value assigned to the leftValue and can be either a variable, a function or a literal. Here is an example of assignments using literals for various data types:</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">int</span> i;      <span class="pl-c"><span class="pl-c">//</span>declaring integer variable</span>
+	<span class="pl-k">float</span> f;    <span class="pl-c"><span class="pl-c">//</span>declaring float variable</span>
+	<span class="pl-k">double</span> d;   <span class="pl-c"><span class="pl-c">//</span>declaring double variable</span>
+	<span class="pl-k">char</span> c;     <span class="pl-c"><span class="pl-c">//</span>declaring character variable</span>
+	<span class="pl-k">bool</span> b, bl;     <span class="pl-c"><span class="pl-c">//</span>decaring boolean variable;</span>
+	
+	<span class="pl-c"><span class="pl-c">//</span>assigning values to these variables</span>
+	i = <span class="pl-c1">45</span>;
+	f = <span class="pl-c1">34.234</span>;
+	d = <span class="pl-c1">34.43242343</span>;
+	c = <span class="pl-s"><span class="pl-pds">'</span>g<span class="pl-pds">'</span></span>; <span class="pl-c"><span class="pl-c">//</span> char are assigned with single quotes</span>
+	b = <span class="pl-c1">true</span>;
+	bl = <span class="pl-c1">5</span> &lt; <span class="pl-c1">4</span>;
+	
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>int : <span class="pl-pds">&quot;</span></span> &lt;&lt; i &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 45</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>float : <span class="pl-pds">&quot;</span></span> &lt;&lt; f &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 34.234</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>double : <span class="pl-pds">&quot;</span></span> &lt;&lt; d &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 34.43242343</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>char : <span class="pl-pds">&quot;</span></span> &lt;&lt; c &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints g</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>b : <span class="pl-pds">&quot;</span></span> &lt;&lt; b &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 1</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>bl : <span class="pl-pds">&quot;</span></span> &lt;&lt; bl &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 0</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="casting" class="anchor" href="#casting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Casting</h3> 
+<p>To explicitly cast a variable to another data type use the round brackets syntax:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">float</span> x = <span class="pl-c1">2.45</span>;
+	std::cout &lt;&lt; (<span class="pl-k">int</span>)x; <span class="pl-c"><span class="pl-c">//</span> prints only 2 (the int part of x)</span>
+}</pre>
+</div> 
+<p><em>note</em>: C++ performs even implicit casting on vars the same way java does.</p> 
+<h3> <a id="variables-scope" class="anchor" href="#variables-scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Variables Scope</h3> 
+<p>Variables can either be:</p> 
+<ul> 
+ <li> <strong>local</strong>: accessible only within the function or <strong>block <em>(group of statements enclosed within curly braces { }. Ex: function body, if body, etc)</em></strong> they are declared in.</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+
+<span class="pl-k">int</span> <span class="pl-en">multiply</span>(<span class="pl-k">int</span> a, <span class="pl-k">int</span> b){	<span class="pl-c"><span class="pl-c">//</span> a and b are copies of x,y, so x,y won't get modified</span>
+        <span class="pl-k">return</span> a * b;
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+        <span class="pl-k">int</span> x = <span class="pl-c1">3</span>, y = <span class="pl-c1">5</span>, z;	<span class="pl-c"><span class="pl-c">//</span> local vars</span>
+        z = <span class="pl-c1">multiply</span>( x, y );	<span class="pl-c"><span class="pl-c">//</span> normally calling function passing by value</span>
+        cout &lt;&lt; z &lt;&lt; endl;
+        <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ul> 
+ <li> <strong>global</strong>: can be accessed by any function in the program.</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">int</span> g = <span class="pl-c1">10</span>;	<span class="pl-c"><span class="pl-c">//</span> global var</span>
+
+<span class="pl-k">void</span> <span class="pl-en">func1</span>(){
+	g = <span class="pl-c1">20</span>;	<span class="pl-c"><span class="pl-c">//</span> actually modifying the global var g </span>
+	cout &lt;&lt; g &lt;&lt; endl;
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-c1">func1</span>();
+	g = <span class="pl-c1">30</span>;	<span class="pl-c"><span class="pl-c">//</span> actually modifying the global var g </span>
+	cout &lt;&lt; g &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="storage-classes" class="anchor" href="#storage-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Storage Classes</h3> 
+<p>Underneath the compiler stores some information about variables (scope, lifetime, etc) in special classes called storage classes. Each storage class is identified by a keyword:</p> 
+<ul> 
+ <li> <strong>auto</strong>: used for local variables. There's no need to specify the auto keyword when declaring a local var.</li> 
+ <li> <strong>extern</strong>: this keyword is used in header files to declare global vars that can be used even in other program files. 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+ my_header.h
+ 	<span class="pl-k">extern</span> <span class="pl-k">int</span> g;	<span class="pl-c"><span class="pl-c">//</span> declaring var g as extern (can be used by external files)</span>
+ 
+ my_program.cpp
+ 	#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&quot;</span>my_header.h<span class="pl-pds">&quot;</span></span>
+ 	#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ 	<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 		g = <span class="pl-c1">4</span>;		<span class="pl-c"><span class="pl-c">//</span> I can access g even if it's declared in another file</span>
+ 		std::cout &lt;&lt; g &lt;&lt; std::endl;
+ 		<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ 	}</pre>
+  </div> </li> 
+ <li> <strong>static</strong>: a variable declared as static once initialized, exists until the end of the program. static vars are visible only in the function, or at most in the file, they are declared in (unlike extern).</li> 
+ <li> <strong>register</strong>: when declaring a var using the register keyword, the var itself will not be stored in computer memory (RAM) as usual, but it will be stored in a register. The usage of this keyword depends on the hw the program is running on.</li> 
+ <li> <strong>mutable</strong>: see const objects.</li> 
+</ul> 
+<h1> <a id="constants" class="anchor" href="#constants" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constants</h1> 
+<p>Constants are elements whose <strong>value is assigned at time of declaration and can never change</strong> later throughout the program. <strong>Constants elemts are identified by the <em>const</em> keyword</strong>, that can be applied to different elements.</p> 
+<h5> <a id="const-variables" class="anchor" href="#const-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Const Variables</h5> 
+<p>Cannot change once declared</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    <span class="pl-k">const</span> <span class="pl-k">int</span> a = <span class="pl-c1">5</span>;		<span class="pl-c"><span class="pl-c">//</span> declaring and initializing a const variable</span>
+    a++;			<span class="pl-c"><span class="pl-c">//</span> this will give compilation error</span>
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h5> <a id="constants-in-functions" class="anchor" href="#constants-in-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constants in Functions</h5> 
+<p>Functions can have:</p> 
+<ul> 
+ <li> <strong>const arguments</strong>: function arguments cannot be changed once passed in 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-k">void</span> <span class="pl-en">func</span>(<span class="pl-k">const</span> <span class="pl-k">int</span> a) {	<span class="pl-c"><span class="pl-c">//</span> const argument</span>
+ 	a = <span class="pl-c1">5</span>;    <span class="pl-c"><span class="pl-c">//</span> compilation error</span>
+ }</pre>
+  </div> </li> 
+ <li> <strong>const return type</strong>: can return only constant values 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-k">const</span> <span class="pl-k">int</span> <span class="pl-en">func</span>() {	<span class="pl-c"><span class="pl-c">//</span> const return type</span>
+ 	<span class="pl-k">return</span> <span class="pl-c1">4</span>;	<span class="pl-c"><span class="pl-c">//</span> returning constant value</span>
+ }</pre>
+  </div> </li> 
+</ul> 
+<h5> <a id="constants-in-classes" class="anchor" href="#constants-in-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constants in Classes</h5> 
+<p>Classes can have:</p> 
+<ul> 
+ <li> <p><strong>const data members</strong>: declared constant without value, initialized in constructor</p> 
+  <div class="highlight highlight-source-c">
+   <pre> #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ using namespace std;
+ class A 	{
+ 	<span class="pl-k">const</span> <span class="pl-k">int</span> x;	<span class="pl-c"><span class="pl-c">//</span> declaring const data member</span>
+ 	public:
+ 		<span class="pl-c1">A</span>(<span class="pl-k">int</span> y) {
+ 			x = y;	<span class="pl-c"><span class="pl-c">//</span> initializing const data member in constructor</span>
+ 		}
+ };
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	A <span class="pl-smi">a</span>(<span class="pl-c1">5</span>);	<span class="pl-c"><span class="pl-c">//</span> member x of this object will be constantly initialized to 5</span>
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> </li> 
+ <li> <p><strong>const function members</strong>: cannot change the value of any data member of the class and cannot call any member function which is not constant</p> 
+  <div class="highlight highlight-source-c">
+   <pre> class A {
+ public:
+ 	<span class="pl-k">int</span> x;
+ 	<span class="pl-k">void</span> <span class="pl-smi">func</span>() <span class="pl-k">const</span> {
+ 		x = <span class="pl-c1">0</span>;        <span class="pl-c"><span class="pl-c">//</span> this will give compilation error cause trying to modify a non const data member</span>
+ 	}
+ };</pre>
+  </div> <p><em>note: constructors cannot be const</em></p> </li> 
+ <li> <p><strong>const objects</strong>: are declared const, their members are initialized through constructor and can never change later</p> 
+  <div class="highlight highlight-source-c">
+   <pre> #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ using namespace std;
+ class A	{
+ 	public:
+ 		<span class="pl-k">int</span> x;
+ 		<span class="pl-c1">A</span>()	{	<span class="pl-c"><span class="pl-c">//</span> constructor</span>
+ 			x = <span class="pl-c1">0</span>;
+ 		}
+ };
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	<span class="pl-k">const</span> A a;      <span class="pl-c"><span class="pl-c">//</span> declaring const object 'a' of class 'A'</span>
+ 	a.<span class="pl-smi">x</span> = <span class="pl-c1">10</span>;       <span class="pl-c"><span class="pl-c">//</span> compilation error, cannot change const objects</span>
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> <p><em>note: as an exception, a data member of a const object still can change if declared <strong>mutable</strong> in the object class.</em></p> </li> 
+</ul> 
+<h5> <a id="const-pointers" class="anchor" href="#const-pointers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Const Pointers</h5> 
+<p>Once declared will always point to the same address (value in the address still can change obviously)</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> a = <span class="pl-c1">4</span>;
+<span class="pl-k">int</span>* <span class="pl-k">const</span> p = &amp;a;   <span class="pl-c"><span class="pl-c">//</span> const pointer p pointing to the variable a</span></pre>
+</div> 
+<h5> <a id="pointer-to-const-variable" class="anchor" href="#pointer-to-const-variable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pointer to Const Variable</h5> 
+<p>Simply a pointer to a constant variable (different from constant pointer, check syntax):</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">const</span> <span class="pl-k">int</span>* p;	<span class="pl-c"><span class="pl-c">//</span> const pointer p pointing to a const int variable</span></pre>
+</div> 
+<h1> <a id="operators" class="anchor" href="#operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OPERATORS</h1> 
+<h3> <a id="arithmetic-operators" class="anchor" href="#arithmetic-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arithmetic Operators</h3> 
+<p>Perform arithmetic operations and return result.<br /> <em>assuming a=8 and b=4</em></p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Operator</th> 
+   <th>Description</th> 
+   <th>Example</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>+</td> 
+   <td>Adds operands</td> 
+   <td>a+b=12</td> 
+  </tr> 
+  <tr> 
+   <td>-</td> 
+   <td>Subtracts second operand from first</td> 
+   <td>a-b=4</td> 
+  </tr> 
+  <tr> 
+   <td>*</td> 
+   <td>Multiplies both operands</td> 
+   <td>a*b=32</td> 
+  </tr> 
+  <tr> 
+   <td>/</td> 
+   <td>Divides numerator by denominator</td> 
+   <td>a/b=2</td> 
+  </tr> 
+  <tr> 
+   <td>%</td> 
+   <td>Modulus Operator returns the remainder of an integer division</td> 
+   <td>a%b=0</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<h3> <a id="relational-operators" class="anchor" href="#relational-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Relational Operators</h3> 
+<p>Check the relationship between two operands and return 1 if the relationship is true and 0 if it is false.<br /> <em>assuming a=8 and b=4</em></p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Operator</th> 
+   <th>Description</th> 
+   <th>Example</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>==</td> 
+   <td>Equal to</td> 
+   <td>(a == b) is false</td> 
+  </tr> 
+  <tr> 
+   <td>!=</td> 
+   <td>Not equal to</td> 
+   <td>(a != b) is true</td> 
+  </tr> 
+  <tr> 
+   <td>&gt;</td> 
+   <td>Greater than</td> 
+   <td>(a &gt; b) is true</td> 
+  </tr> 
+  <tr> 
+   <td>&lt;</td> 
+   <td>Less than</td> 
+   <td>(a &lt; b) is false</td> 
+  </tr> 
+  <tr> 
+   <td>&gt;=</td> 
+   <td>Greater than or equal to</td> 
+   <td>(a &gt;= b) is true</td> 
+  </tr> 
+  <tr> 
+   <td>&lt;=</td> 
+   <td>Less than or equal to</td> 
+   <td>(a &lt;= b) is false</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<h3> <a id="logical-operators" class="anchor" href="#logical-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logical Operators</h3> 
+<p>Perform logical operations and return 1 if the relationship is true and 0 if it is false.<br /> <em>assuming a=1 and b=0</em></p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Operator</th> 
+   <th>Description</th> 
+   <th>Example</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>&amp;&amp;</td> 
+   <td>Logical AND. If both the operands are non-zero, then the condition becomes true</td> 
+   <td>a&amp;&amp;b is 0</td> 
+  </tr> 
+  <tr> 
+   <td>||</td> 
+   <td>Logical OR. If any one or both the operands are non-zero, then the condition becomes true</td> 
+   <td>a||b is 1</td> 
+  </tr> 
+  <tr> 
+   <td>!</td> 
+   <td>Logical NOT. It is used to reverse the condition. So, if a condition is true, ! makes it false and vice versa.</td> 
+   <td>!a is 0</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<hr /> 
+<h3> <a id="assignment-operators" class="anchor" href="#assignment-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Assignment Operators</h3> 
+<p>Operator Description Example</p> 
+<hr /> 
+<p>|= Assigns value of right operand to left operand C = A+B| |+= Adds the value of right operand to left operand and assigns the final value to the left operand C+=A is same as C=C+A| |-= Subtracts the value of right operand from left operand and assigns the final value to the left operand C-=A is same as C=C-A| |*= Multiplies the value right operand to left operand and assigns the final value to the left operand C*=A is same as C=C*A| |/= Divides the value of left operand from right operand and assigns the final value to the left operand C/=A is same as C=C/A| |%= Takes modulus using two operands and assigns the result to the left operand C%=A is same as C=C%A|</p> 
+<hr /> 
+<h3> <a id="increment-and-decrement-operators" class="anchor" href="#increment-and-decrement-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Increment and Decrement Operators</h3> 
+<ul> 
+ <li> <strong>++</strong> operator increments by 1 the value of an integer var</li> 
+ <li> <strong>--</strong> operator decerements by 1 the value of an integer var both these operator can be used as a <strong>prefix</strong> or as a <strong>postfix</strong>, the only difference between these 2 is that: 
+  <ul> 
+   <li>prefix returns the var value <strong>after</strong> increment/decrement (a=8; a++ returns 8)</li> 
+   <li>postfix returns the var value <strong>before</strong> increment/decrement (a=8; ++a returns 9)</li> 
+  </ul> </li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">int</span> a=<span class="pl-c1">8</span>, b=<span class="pl-c1">8</span>, c=<span class="pl-c1">8</span>, d=<span class="pl-c1">8</span>;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>a++ = <span class="pl-pds">&quot;</span></span> &lt;&lt; a++ &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 8</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>++b = <span class="pl-pds">&quot;</span></span> &lt;&lt; ++b &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 9</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>c-- = <span class="pl-pds">&quot;</span></span> &lt;&lt; c-- &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 8</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>--d = <span class="pl-pds">&quot;</span></span> &lt;&lt; --d &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 7</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="sizeof-operator" class="anchor" href="#sizeof-operator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>sizeof() operator</h3> 
+<p>Returns the size of a variable (size of the data type definition)</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">int</span> i = <span class="pl-c1">6</span>;
+	<span class="pl-k">int</span> j;
+	<span class="pl-k">char</span> c;
+	<span class="pl-k">float</span> f;
+	<span class="pl-k">double</span> d;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>size of integer variable i : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-k">sizeof</span>(i) &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 4</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>size of integer variable j : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-k">sizeof</span>(j) &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 4</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>size of character variable c : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-k">sizeof</span>(c) &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 1</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>size of float variable f : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-k">sizeof</span>(f) &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 4</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>size of double variable d : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-k">sizeof</span>(d) &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> 8</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="conditional-operators" class="anchor" href="#conditional-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CONDITIONAL OPERATORS</h1> 
+<p>All conditional operators in C++ are identical to Java.</p> 
+<h3> <a id="if-else-else-if" class="anchor" href="#if-else-else-if" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>if, else, else if</h3> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    using namespace std;
+    <span class="pl-k">char</span> grade = <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>;
+    <span class="pl-k">if</span>( grade == <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span> ){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Excellent !<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(grade == <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Outstanding !<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(grade == <span class="pl-s"><span class="pl-pds">'</span>C<span class="pl-pds">'</span></span>){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Good !<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(grade == <span class="pl-s"><span class="pl-pds">'</span>D<span class="pl-pds">'</span></span>){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Can do better<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(grade == <span class="pl-s"><span class="pl-pds">'</span>E<span class="pl-pds">'</span></span>){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Just passed<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span>(grade == <span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>){
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>You failed<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">else</span>{
+      cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Invalid grade<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    }
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="ternary-operator" class="anchor" href="#ternary-operator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ternary operator</h3> 
+<div class="highlight highlight-source-c">
+ <pre>condition ? expression1 : expression2;
+
+<span class="pl-c"><span class="pl-c">//</span> Ex:</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	using namespace std;
+	<span class="pl-k">int</span> age;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter age<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cin &gt;&gt; age;
+	(age &gt; <span class="pl-c1">18</span>) ? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>eligible to vote<span class="pl-pds">&quot;</span></span> : cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>not eligible to vote<span class="pl-pds">&quot;</span></span>;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="switch-case" class="anchor" href="#switch-case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>switch case</h3> 
+<p>Switching is permitted on basic data types like char, int, etc:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">switch</span>(expression) {
+    <span class="pl-k">case</span> constant1:
+        <span class="pl-c1">statement</span>(s);
+        <span class="pl-k">break</span>;
+    <span class="pl-k">case</span> constant2:
+        <span class="pl-c1">statement</span>(s);
+        <span class="pl-k">break</span>;
+	<span class="pl-c"><span class="pl-c">/*</span> you can give any number of cases <span class="pl-c">*/</span></span>
+    <span class="pl-k">default</span>:
+        <span class="pl-c1">statement</span>(s);
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">char</span> grade = <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>;
+  	<span class="pl-k">switch</span> ( grade ) {
+		<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>:
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Excellent ! <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+    		 <span class="pl-k">break</span> ;
+    	<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>:
+    		 cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Outstanding ! <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+      		<span class="pl-k">break</span> ;
+    	<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>C<span class="pl-pds">'</span></span>:
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Good ! <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+      		<span class="pl-k">break</span> ;
+    	<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>D<span class="pl-pds">'</span></span>:
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Can do better <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+      		<span class="pl-k">break</span> ;
+    	<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>E<span class="pl-pds">'</span></span>:
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Just passed <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+      		<span class="pl-k">break</span> ;
+    	<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>:
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> You failed <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+      		<span class="pl-k">break</span> ;
+    	<span class="pl-k">default</span> :
+      		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Invalid grade <span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+  	}
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p><em>note: No need to write break in default case because it automatically terminates once default statements are executed.</em></p> 
+<h1> <a id="loops" class="anchor" href="#loops" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LOOPS</h1> 
+<p>All loops in C++ are identical to Java. Also <strong>break <em>(jump out of the loop)</em></strong> and <strong>continue <em>(jump to the next iteration)</em></strong> statements are the same.</p> 
+<h3> <a id="while" class="anchor" href="#while" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>while</h3> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">while</span>(condition) {
+    <span class="pl-c1">statement</span>(s)
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    using namespace std;
+    <span class="pl-k">int</span> n = <span class="pl-c1">1</span>;
+    <span class="pl-k">while</span>( n &lt;= <span class="pl-c1">10</span>){
+        cout &lt;&lt; n &lt;&lt; endl;
+        n++;
+    }
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="for" class="anchor" href="#for" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>for</h3> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">for</span>(initialization; condition; propagation) {
+    <span class="pl-c1">statement</span>(s)
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Ex:</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">int</span> n;
+	<span class="pl-k">for</span>( n = <span class="pl-c1">1</span>; n &lt;= <span class="pl-c1">10</span>; n++ ) {
+		cout &lt;&lt; n &lt;&lt; endl;
+	}
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="do-while" class="anchor" href="#do-while" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>do while</h3> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">do</span> {
+    <span class="pl-c1">statement</span>(s)
+} <span class="pl-k">while</span>( condition );
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    using namespace std;
+    <span class="pl-k">int</span> n = <span class="pl-c1">1</span>;
+    <span class="pl-k">do</span> {
+    	cout &lt;&lt; n &lt;&lt; endl;
+      	n++;
+    } <span class="pl-k">while</span>( n &lt;= <span class="pl-c1">10</span> );
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="for-each" class="anchor" href="#for-each" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For-each</h3> 
+<p>In C++ is used to iterate over arrays .</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ 
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	<span class="pl-k">int</span> ar[] = { <span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>,<span class="pl-c1">4</span>,<span class="pl-c1">5</span>,<span class="pl-c1">6</span>,<span class="pl-c1">7</span>,<span class="pl-c1">8</span>,<span class="pl-c1">9</span>,<span class="pl-c1">10</span> };
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> m : ar) { <span class="pl-c"><span class="pl-c">//</span> element data type matches with array data type</span>
+		cout &lt;&lt; m &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints single array elements</span>
+	}
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FUNCTIONS</h1> 
+<p>Syntax for defining a function is</p> 
+<div class="highlight highlight-source-c">
+ <pre>return_type <span class="pl-en">function_name</span> (parameters) {
+    <span class="pl-c"><span class="pl-c">//</span>code</span>
+}
+
+<span class="pl-c"><span class="pl-c">//</span> example</span>
+<span class="pl-k">float</span> <span class="pl-en">average</span>( <span class="pl-k">int</span> num1, <span class="pl-k">int</span> num2 ) {
+    <span class="pl-k">float</span> avg; <span class="pl-c"><span class="pl-c">/*</span> declaring local variable <span class="pl-c">*/</span></span>
+    avg = ( num1 + num2 )/<span class="pl-c1">2.0</span>; <span class="pl-c"><span class="pl-c">//</span> avg is a local variable</span>
+    <span class="pl-k">return</span> avg; <span class="pl-c"><span class="pl-c">/*</span> returning the average value <span class="pl-c">*/</span></span>
+}</pre>
+</div> 
+<p>Syntax for calling a function is</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-en">function_name</span> ( parameters ) ;
+
+<span class="pl-c"><span class="pl-c">//</span> Ex</span>
+<span class="pl-en">average</span>( num1, num2 );</pre>
+</div> 
+<h3> <a id="function-scope" class="anchor" href="#function-scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>function scope</h3> 
+<p>In order to properly call a function, it must be defined <strong>before</strong> the point where I am making the call. So assuming we want to call a &quot;sayHello&quot; function from our main function we have several ways to do it:</p> 
+<ul> 
+ <li>Define and implement the function before calling it:</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">sayHello</span>() { <span class="pl-c"><span class="pl-c">//</span> declaring sayHello function </span>
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Hello!<span class="pl-pds">&quot;</span></span> &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> implementing sayHello function</span>
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-c1">sayHello</span>();
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ul> 
+ <li>Define the function before the call and implementing it after the call</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">void</span> <span class="pl-en">sayHello</span>(); <span class="pl-c"><span class="pl-c">//</span> declaring sayHello function</span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-c1">sayHello</span>();
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}
+<span class="pl-k">void</span> <span class="pl-en">sayHello</span>() {
+    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Hello!<span class="pl-pds">&quot;</span></span> &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> implementing sayHello function</span>
+}</pre>
+</div> 
+<ul> 
+ <li>Implement the function in a dedicated Class (.cpp) and declare it in the related header (.h), then simply include the header in the main() file</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>Hello.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	Hello hello;
+	hello.<span class="pl-c1">sayHello</span>();
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="recursion" class="anchor" href="#recursion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recursion</h3> 
+<p>Obviously any function (not only the main) can call other functions if they are defined before the call, and even a function calling itself is permitted (recursion) even if it's a borderline case.</p> 
+<h3> <a id="inline-functions" class="anchor" href="#inline-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inline Functions</h3> 
+<p>When calling a function, first the function first gets called and then its body gets executed. Obviously it takes comparatively more time to call a function and execute its code than to execute the code directly without any function call. <br /> By using the keyword <strong>inline</strong> when declaring a function, the compiler will replace the function call, straight with the code inside the function, saving the time that is taken for the call. Ex:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">inline</span> <span class="pl-k">int</span> <span class="pl-en">sum</span>(<span class="pl-k">int</span> x, <span class="pl-k">int</span> y) {
+	<span class="pl-k">return</span> x+y;
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">int</span> a = <span class="pl-c1">2</span>, b = <span class="pl-c1">3</span>;
+	cout &lt;&lt; <span class="pl-c1">sum</span>(a, b) &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p><em>note: An inline function must be defined at the time of its declaration</em></p> 
+<h1> <a id="pointers" class="anchor" href="#pointers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>POINTERS</h1> 
+<p>Anytime we declare a variable, its value will be stored in a given memory location. Any variables thus consists of an <strong>address</strong> (memory location reserved for the variable) and a <strong>value</strong> (actual value contained inside the memory address).<br /> For instance:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> a = <span class="pl-c1">10</span>;	<span class="pl-c"><span class="pl-c">//</span> generic var definition</span></pre>
+</div> 
+<ul> 
+ <li> <strong>a</strong> is the <strong>value</strong> of the var and corresponds to <strong>10</strong> </li> 
+ <li> <strong>&amp;a</strong> (<em>address-of</em> operator) is the <strong>address</strong> of the var and corresponds to something like <strong>0xffff377c</strong> (just an example)</li> 
+</ul> 
+<p><strong>A pointer is a variable that stores a memory address</strong>. When storing the memory address of a var <strong>a</strong> into a pointer <strong>p</strong>, then <strong>p points to a</strong>.</p> 
+<div class="highlight highlight-source-c">
+ <pre>&lt;variable_type&gt; *&lt;name&gt;; <span class="pl-c"><span class="pl-c">//</span> pointer declaration syntax</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+<span class="pl-k">int</span> *p;		<span class="pl-c"><span class="pl-c">//</span> declaration of a pointer to int</span>
+p = &amp;a;		<span class="pl-c"><span class="pl-c">//</span> assigning to p the address of a, now p points to a (the value of p is the address of a)</span></pre>
+</div> 
+<p>There are two ways to use the pointer to access information:</p> 
+<ol> 
+ <li>Use just the pointer name <strong>p</strong> to access the <strong>address</strong> of the pointed variable</li> 
+ <li>Use <strong>*p</strong> to access the <strong>actual value</strong> stored at the pointed address (this process is called <em>dereferencing</em>).</li> 
+</ol> 
+<p><em>note: pointers should always be initialized before usage, to avoid accessing unknown memory and making the program crash</em></p> 
+<p>The natural use of a pointer is to <strong>call a function by reference</strong> passing the pointed <strong>memory address</strong>:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-en">call_to_function_expecting_memory_address</span>(pointer);</pre>
+</div> 
+<p>Here is an example to understand the nature of all different elements involved:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span> 
+using namespace std;
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">int</span> a = <span class="pl-c1">10</span>; 			<span class="pl-c"><span class="pl-c">//</span> value=10, address=0xffff377c</span>
+  	<span class="pl-k">int</span> *p; 			<span class="pl-c"><span class="pl-c">//</span> declare p pointer, will occupy another address like 0xffff3778</span>
+  	p = &amp;a;				<span class="pl-c"><span class="pl-c">//</span> p points to a</span>
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>p = <span class="pl-pds">&quot;</span></span> &lt;&lt; p &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints 0xffff377c</span>
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>*p = <span class="pl-pds">&quot;</span></span> &lt;&lt; *p &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints 10</span>
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;p = <span class="pl-pds">&quot;</span></span> &lt;&lt; &amp;p &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints 0xffff3778</span>
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>*&amp;p = <span class="pl-pds">&quot;</span></span> &lt;&lt; *&amp;p &lt; endl;	<span class="pl-c"><span class="pl-c">//</span> this is a borderline case, prints 0xffff377c</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="call-by-value-and-call-by-reference" class="anchor" href="#call-by-value-and-call-by-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>&quot;Call by Value&quot; and &quot;Call By Reference&quot;</h3> 
+<ul> 
+ <li>In normal function calls <strong>(call by value)</strong>, the parameters of a function are copies of the arguments passed in. So altering the parameters within the function won't affect the real values.</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex:</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span> 
+
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">swap</span>( <span class="pl-k">int</span> a, <span class="pl-k">int</span> b ) {
+	<span class="pl-k">int</span> t; 
+	t = a; 
+	a = b; 
+	b = t; 
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">int</span> num1 = <span class="pl-c1">1</span>, num2 = <span class="pl-c1">2</span>; 
+	<span class="pl-c1">swap</span>( num1, num2);
+	<span class="pl-c"><span class="pl-c">//</span> real values does NOT change</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>First number = <span class="pl-pds">&quot;</span></span> &lt;&lt; num1 &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 1</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Second number = <span class="pl-pds">&quot;</span></span> &lt;&lt; num2 &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span> prints 2</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ul> 
+ <li>In call by reference, we pass the address of variables to the function. Passing address is like passing originals, so altering the parameters will alter the real values too.</li> 
+</ul> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex:</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span> 
+
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">swap</span>( <span class="pl-k">int</span> *a, <span class="pl-k">int</span> *b ) {
+	<span class="pl-k">int</span> t; 
+	t = *a; 
+	*a = *b; 
+	*b = t; 
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">int</span> num1 = <span class="pl-c1">1</span>, num2 = <span class="pl-c1">2</span>; 
+	<span class="pl-c1">swap</span>( &amp;num1, &amp;num2);
+	<span class="pl-c"><span class="pl-c">//</span> real values DO change</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>First number = <span class="pl-pds">&quot;</span></span> &lt;&lt; num1 &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints 2</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Second number = <span class="pl-pds">&quot;</span></span> &lt;&lt; num2 &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints 1</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>Note that to properly call by reference:</p> 
+<ul> 
+ <li>The caller passes var addresses <strong>&amp;num1</strong> </li> 
+ <li>The called function exposes <strong>*a</strong> pointer args</li> 
+ <li>The called function works on whole <strong>*a</strong> parameters in order to modify actual values</li> 
+</ul> 
+<h1> <a id="arrays" class="anchor" href="#arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ARRAYS</h1> 
+<div class="highlight highlight-source-c">
+ <pre>datatype array_name [array_size];</pre>
+</div> 
+<ul> 
+ <li>In C++ an array is a collection of similar types of data</li> 
+ <li>Index of an array always starts with 0.</li> 
+ <li>Array allocates contiguous memory, this means that the memories of all elements of an array are allocated together and are continuous.</li> 
+ <li>Arrays length is specified at the time of declaration and remains constant till compile time.</li> 
+</ul> 
+<h3> <a id="declaration-and-initialization" class="anchor" href="#declaration-and-initialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Declaration and Initialization</h3> 
+<p>Compiler needs to know the size of the array in order to reserve the necessary memory locations when declaring it. Initialization can be done 2 ways:</p> 
+<ol> 
+ <li>Size explicitly declared</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> n[<span class="pl-c1">3</span>]
+n[<span class="pl-c1">0</span>] = <span class="pl-c1">2</span>;
+n[<span class="pl-c1">1</span>] = <span class="pl-c1">4</span>;
+n[<span class="pl-c1">2</span>] = <span class="pl-c1">8</span>;</pre>
+</div> 
+<ol start="2"> 
+ <li>Elements explicitly declared</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> n[ ]={ <span class="pl-c1">2</span>,<span class="pl-c1">4</span>,<span class="pl-c1">8</span> };</pre>
+</div> 
+<h3> <a id="pointers-to-array" class="anchor" href="#pointers-to-array" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pointers to Array</h3> 
+<p>When an array name is used as an expression, it refers to a pointer to the first element, not the entire array. So to create a pointer to an array you can write:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> age[<span class="pl-c1">50</span>];
+<span class="pl-k">int</span> *ptr;
+ptr = age;	<span class="pl-c"><span class="pl-c">//</span> Gives the memory address of the first array element without a reference operator(&amp;)</span>
+``
+As opposed of what you would <span class="pl-k">do</span> to create a pointer to a var
+```c
+<span class="pl-k">int</span> *ptr;
+<span class="pl-k">int</span> num;
+ptr = &amp;num; <span class="pl-c"><span class="pl-c">//</span> Requires &amp; to give the memory address to the ptr</span></pre>
+</div> 
+<p>note that <strong>*p</strong>, <strong>*(p+1)</strong>, <strong>*(p+2)</strong>, ... give access to the array <strong>element values</strong>.</p> 
+<h3> <a id="passing-an-array-to-a-function" class="anchor" href="#passing-an-array-to-a-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passing an array to a function</h3> 
+<p>Entire arrays cannot be passed to functions, but what we do is passing the array name. Actually the array name is the address of the first element of the array itself and that is in fact a reference to the array. So de facto arrays gets always passed by reference.</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">modifyArrayByReference</span>(<span class="pl-k">int</span> array[], <span class="pl-k">int</span> size) {
+	<span class="pl-k">int</span> tmpCopy[size];
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> i=<span class="pl-c1">0</span>; i&lt;size; i++) {
+		tmpCopy[i] = array[i];
+	}
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> j=<span class="pl-c1">0</span>; j&lt;size; j++) {
+		array[j] = tmpCopy[size-j-<span class="pl-c1">1</span>];	<span class="pl-c"><span class="pl-c">//</span> -1 skips array terminator</span>
+	}
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">int</span> size;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter a size for your int array<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cin &gt;&gt; size;
+	<span class="pl-k">int</span> array[size];
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> i=<span class="pl-c1">0</span>; i&lt;size; i++) {
+		cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter int number <span class="pl-pds">&quot;</span></span> &lt;&lt; i+<span class="pl-c1">1</span> &lt;&lt; endl;
+		cin &gt;&gt; array[i];
+	}
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Array before modification<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> k=<span class="pl-c1">0</span>; k&lt;size; k++) {
+		cout &lt;&lt; array[k] &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> <span class="pl-pds">&quot;</span></span>;	<span class="pl-c"><span class="pl-c">//</span> prints 1 2 3</span>
+	}
+	cout &lt;&lt; endl;
+	arrays.<span class="pl-c1">modifyArrayByReference</span>(array, size);
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Array after modification<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	<span class="pl-k">for</span> (<span class="pl-k">int</span> k=<span class="pl-c1">0</span>; k&lt;size; k++) {
+		cout &lt;&lt; array[k] &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> <span class="pl-pds">&quot;</span></span>;	<span class="pl-c"><span class="pl-c">//</span> prints 3 2 1</span>
+	}
+	cout &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>The same can be done using a pointer:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span> 
+
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">display</span>(<span class="pl-k">int</span> *p) {
+    <span class="pl-k">int</span> i;
+    <span class="pl-k">for</span>(i=<span class="pl-c1">0</span>;i&lt;<span class="pl-c1">8</span>;++i) {
+        cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>n[<span class="pl-pds">&quot;</span></span> &lt;&lt; i &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>] = <span class="pl-pds">&quot;</span></span> &lt;&lt; *p &lt;&lt; endl;
+        p++;	<span class="pl-c"><span class="pl-c">//</span> *p is n[0], *(p+1) is n[1] and so on</span>
+    }
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    <span class="pl-k">int</span> size,j; 
+    <span class="pl-k">int</span> n[ ] = { <span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span> }; 
+    <span class="pl-c1">display</span>(n);
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ul> 
+ <li>Caller passes array name</li> 
+ <li>Called function exposes a pointer</li> 
+</ul> 
+<h3> <a id="c-style-arrays" class="anchor" href="#c-style-arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>C-style arrays</h3> 
+<p>Remember that the basic C++ array is a C style array, so it is a very low level object with no facility functions at all (not even size, add, remove etc)<br /> There are other kinds of array that expose some high level functions like size, iterators, utility methods like for instance std::array contained into std lib.</p> 
+<h1> <a id="vectors" class="anchor" href="#vectors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VECTORS</h1> 
+<p>Vectors are just arrays whose length changes dynamically according to the requirements. So opposite to arrays, for vectors there's no need to specify the length while declaring the vector, just add or remove items from it and the length will change accordingly.</p> 
+<p>The most common template for vectors is the one from std lib, that also offers many utility functions for size, ordering, adding deleting. For using std::vector, we need to include the header in our program.:</p> 
+<div class="highlight highlight-source-c">
+ <pre>std::vector&lt;datatype&gt; array_name;
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span>
+
+std::vector&lt;<span class="pl-k">int</span>&gt; numbers;</pre>
+</div> 
+<h1> <a id="strings" class="anchor" href="#strings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>STRINGS</h1> 
+<p>Strings is simply an array of chars. String literals are always wrapped in double quotes <strong>&quot;my string&quot;</strong> and the last element of the array is <strong>&quot;\0&quot;</strong> that corresponds to the <strong>string terminator</strong> (ASCII value of '\0' is '0').<br /> Declaring a string like:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">char</span> myString[] = <span class="pl-s"><span class="pl-pds">&quot;</span>Sam<span class="pl-pds">&quot;</span></span></pre>
+</div> 
+<p>will result in the following array</p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>S</th> 
+   <th>a</th> 
+   <th>m</th> 
+   <th>\0</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td><em>0</em></td> 
+   <td><em>1</em></td> 
+   <td><em>2</em></td> 
+   <td><em>3</em></td> 
+  </tr> 
+ </tbody> 
+</table> 
+<h3> <a id="taking-string-inputs-and-printing-them" class="anchor" href="#taking-string-inputs-and-printing-them" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Taking string inputs and printing them</h3> 
+<ol> 
+ <li>Single-word input</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	
+	<span class="pl-k">char</span> name[<span class="pl-c1">20</span>];       <span class="pl-c"><span class="pl-c">//</span>declaring string 'name'</span>
+	
+	cin &gt;&gt; name; <span class="pl-c"><span class="pl-c">//</span>taking string input like 'Alessio'</span>
+	cout &lt;&lt; name &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span>prints 'Alessio'</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ol start="2"> 
+ <li>Multi-word input</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	using namespace std;
+	
+	<span class="pl-k">char</span> name[<span class="pl-c1">20</span>];       <span class="pl-c"><span class="pl-c">//</span>declaring string 'name'</span>
+	
+	cin.<span class="pl-c1">getline</span>(name, <span class="pl-k">sizeof</span>(name)); <span class="pl-c"><span class="pl-c">//</span>taking string input like 'Alessio Matteo'</span>
+	cout &lt;&lt; name &lt;&lt; endl; <span class="pl-c"><span class="pl-c">//</span>prints 'Alessio Matteo'</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="passing-strings-to-functions" class="anchor" href="#passing-strings-to-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passing Strings to Functions</h3> 
+<p>Passing a string to a function is the same as passing an array (still a pass by reference):</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">void</span> <span class="pl-en">display</span>( <span class="pl-k">char</span> ch[] ) {
+	cout &lt;&lt; ch;
+}
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">char</span> arr[<span class="pl-c1">30</span>];
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter a word<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cin &gt;&gt; arr;
+	<span class="pl-c1">display</span>(arr);
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="c-style-strings" class="anchor" href="#c-style-strings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>C-style Strings</h3> 
+<p>As already said, basic C++ strings are simple arrays and like array are very low level objects. The <em>string</em> template from the standard library (<em>std::string</em>) can be used in order to have more facilities, anyway the library <strong>cstring</strong> exposes some basic utility functions on C-style strings too, here is the list:</p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Function</th> 
+   <th>Use</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>strlen</td> 
+   <td>calculates the length of string</td> 
+  </tr> 
+  <tr> 
+   <td>strcat</td> 
+   <td>Appends one string at the end of another</td> 
+  </tr> 
+  <tr> 
+   <td>strncat</td> 
+   <td>Appends first n characters of a string at the end of another</td> 
+  </tr> 
+  <tr> 
+   <td>strcpy</td> 
+   <td>Copies a string into another</td> 
+  </tr> 
+  <tr> 
+   <td>strncpy</td> 
+   <td>Copies first n characters of one string into another</td> 
+  </tr> 
+  <tr> 
+   <td>strcmp</td> 
+   <td>Compares two strings</td> 
+  </tr> 
+  <tr> 
+   <td>strncmp</td> 
+   <td>Compares first n characters of two strings</td> 
+  </tr> 
+  <tr> 
+   <td>strchr</td> 
+   <td>Finds first occurrence of a given character in a string</td> 
+  </tr> 
+  <tr> 
+   <td>strrchr</td> 
+   <td>Finds last occurrence of a given character in a string</td> 
+  </tr> 
+  <tr> 
+   <td>strstr</td> 
+   <td>Finds first occurrence of a given string in another string</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<p>Here is an example of usage of the <strong>cstring</strong> library:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">char</span> s2[ ]= <span class="pl-s"><span class="pl-pds">&quot;</span>Hello<span class="pl-pds">&quot;</span></span>; 
+  	<span class="pl-k">char</span> s1[<span class="pl-c1">10</span>]; 
+  	<span class="pl-c1">strcpy</span>(s1, s2);
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Source string <span class="pl-pds">&quot;</span></span> &lt;&lt; s2 &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints hello</span>
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Target string <span class="pl-pds">&quot;</span></span> &lt;&lt; s1 &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints hello</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="pre-processor" class="anchor" href="#pre-processor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PRE-PROCESSOR</h1> 
+<p>C++ programs are pre-processed before being executed. The pre-processor simply replaces all pre-processor directives with the corresponding code. <strong>All directives starting with a # symbol are pre-processor directives</strong>.<br /> Most common pre-processor directives are:</p> 
+<ul> 
+ <li> <strong>#include</strong>: inclusions are replaced by pre-processor before execution making header files available in our program.</li> 
+ <li> <strong>#define</strong>: is used to define <em>constant values</em> or <em>macros</em> that will be available globally in the program. Pre-processor replaces the objects using #define around the program with their value, or macro code, before execution.</li> 
+</ul> 
+<h1> <a id="structures" class="anchor" href="#structures" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>STRUCTURES</h1> 
+<p>While array are used to collect similar data types, <strong>a structure is a collection of dissimilar data types</strong>.<br /> The syntax for structure is:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">struct</span> structure_name {
+	data-type member-<span class="pl-c1">1</span>;
+	data-type member-<span class="pl-c1">2</span>;
+	data-type member-<span class="pl-c1">3</span>;
+};
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+<span class="pl-k">struct</span> student {
+    <span class="pl-k">int</span> id;
+    std::string name;
+    <span class="pl-k">int</span> phoneNumber;
+};</pre>
+</div> 
+<p>Here is an example of usage of a structure:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">struct</span> student 	{
+  		<span class="pl-k">int</span> id;
+  		string name;
+		<span class="pl-k">int</span> phoneNumber;
+	};
+	<span class="pl-k">struct</span> student p1 = {<span class="pl-c1">1</span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Brown<span class="pl-pds">&quot;</span></span>,<span class="pl-c1">123443</span>};
+  	<span class="pl-k">struct</span> student p2, p3=p1 ;	<span class="pl-c"><span class="pl-c">//</span> copying p1 into p3</span>
+  	p2.<span class="pl-smi">id</span> = <span class="pl-c1">2</span>; 
+  	p2.<span class="pl-smi">name</span> = <span class="pl-s"><span class="pl-pds">&quot;</span>Sam<span class="pl-pds">&quot;</span></span>;
+  	p2.<span class="pl-smi">phoneNumber</span> = <span class="pl-c1">1234567822</span>; 
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>First Student<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>id : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">id</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>name : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">name</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>phone number : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">phoneNumber</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Second Student<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>id : <span class="pl-pds">&quot;</span></span> &lt;&lt; p2.<span class="pl-smi">id</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>name : <span class="pl-pds">&quot;</span></span> &lt;&lt; p2.<span class="pl-smi">name</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>phone number : <span class="pl-pds">&quot;</span></span> &lt;&lt; p2.<span class="pl-smi">phoneNumber</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Third Student<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>id : <span class="pl-pds">&quot;</span></span> &lt;&lt; p3.<span class="pl-smi">id</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>name : <span class="pl-pds">&quot;</span></span> &lt;&lt; p3.<span class="pl-smi">name</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>phone number : <span class="pl-pds">&quot;</span></span> &lt;&lt; p3.<span class="pl-smi">phoneNumber</span> &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>Note that:</p> 
+<ul> 
+ <li>To <strong>access the members</strong> of a structure we use the classic object oriented <strong>dot</strong> notation (<strong>p1.name</strong>).</li> 
+ <li> <strong>Structures can be copied</strong> in one go (<strong>p3=p1</strong>).</li> 
+ <li>A collection of similar structures can be put into an <strong>array of structures</strong> if needed (<strong>struct student stud[5];</strong>).</li> 
+</ul> 
+<h3> <a id="passing-structures-to-function" class="anchor" href="#passing-structures-to-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passing structures to function</h3> 
+<p><strong>1. Pass by value</strong> (passing a copy of the struct):</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">struct</span> student {
+	<span class="pl-k">int</span> id;
+  	string name;
+  	<span class="pl-k">int</span> phoneNumber;
+};
+<span class="pl-k">void</span> <span class="pl-en">display</span>(<span class="pl-k">struct</span> student st) {
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>id : <span class="pl-pds">&quot;</span></span> &lt;&lt; st.<span class="pl-smi">id</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Name : <span class="pl-pds">&quot;</span></span> &lt;&lt; st.<span class="pl-smi">name</span> &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Phone number : <span class="pl-pds">&quot;</span></span> &lt;&lt; st.<span class="pl-smi">phoneNumber</span> &lt;&lt; endl;
+}
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">struct</span> student s;
+  	s.<span class="pl-smi">id</span> = <span class="pl-c1">4</span>;
+  	s.<span class="pl-smi">name</span> = <span class="pl-s"><span class="pl-pds">&quot;</span>Ron<span class="pl-pds">&quot;</span></span>; 
+  	s.<span class="pl-smi">phoneNumber</span> = <span class="pl-c1">888888</span>;
+  	<span class="pl-c1">display</span>(s);
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p><strong>2. Pass by reference</strong> (modifying the original struct):</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">struct</span> student {
+	<span class="pl-k">int</span> id;
+  	string name;
+  	<span class="pl-k">int</span> phoneNumber;
+};
+<span class="pl-k">void</span> <span class="pl-en">display</span>(<span class="pl-k">struct</span> student *st) {
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>id : <span class="pl-pds">&quot;</span></span> &lt;&lt; st -&gt; id &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Name : <span class="pl-pds">&quot;</span></span> &lt;&lt; st -&gt; name &lt;&lt; endl;
+  	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Phone number : <span class="pl-pds">&quot;</span></span> &lt;&lt; st -&gt; phoneNumber &lt;&lt; endl;
+}
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">struct</span> student s;
+  	s.<span class="pl-smi">id</span> = <span class="pl-c1">4</span>;
+  	s.<span class="pl-smi">name</span> = <span class="pl-s"><span class="pl-pds">&quot;</span>Ron<span class="pl-pds">&quot;</span></span>; 
+  	s.<span class="pl-smi">phoneNumber</span> = <span class="pl-c1">888888</span>;
+  	<span class="pl-c1">display</span>(&amp;s;);
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>Note that <strong>-&gt; notation</strong> is used to access the members of the structure using its reference.<br /> The same principle is valid with a pointer to a structure:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">struct</span> student {
+	<span class="pl-k">int</span> id;
+	string name;
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-k">struct</span> student stud = {<span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Sam<span class="pl-pds">&quot;</span></span>};
+  	<span class="pl-k">struct</span> student *ptr;	<span class="pl-c"><span class="pl-c">//</span> pointer to a struct</span>
+  	ptr = &amp;stud;		<span class="pl-c"><span class="pl-c">//</span> ptr points to stud</span>
+  	cout &lt;&lt; stud.<span class="pl-smi">id</span> &lt;&lt; stud.<span class="pl-smi">id</span> &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> using . to access struct members</span>
+  	cout &lt;&lt; ptr-&gt;id &lt;&lt; ptr-&gt;name &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> using --&gt; to access struct members</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="unions" class="anchor" href="#unions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UNIONS</h1> 
+<p>Unions are formally exactly the same as structures:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">union</span> unionName {	<span class="pl-c"><span class="pl-c">//</span> union syntax, same as struct but with union keyword</span>
+	data-type member-<span class="pl-c1">1</span>;
+	data-type member-<span class="pl-c1">2</span>;
+	data-type member-<span class="pl-c1">3</span>;
+};</pre>
+</div> 
+<p>The only difference between unions and structures is the way they are handled in memory.</p> 
+<ul> 
+ <li> <p><strong>the amount of memory required to store a structure is the sum of the memory sizes of all its members</strong></p> 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-k">struct</span> student1 {         <span class="pl-c"><span class="pl-c">//</span> defining a struct</span>
+   	<span class="pl-k">int</span> roll_no;
+   	<span class="pl-k">char</span> name[<span class="pl-c1">40</span>];
+   	<span class="pl-k">int</span> phone_number;
+ };</pre>
+  </div> <p><em>this struct occupies 4 + 40 + 4 = 48bytes</em></p> </li> 
+ <li> <p><strong>the memory size of a union is equal to the size of its member occupying the maximum space in the memory</strong></p> 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-k">union</span> student2 {          <span class="pl-c"><span class="pl-c">//</span> defining a union</span>
+ 	<span class="pl-k">int</span> roll_no;
+   	<span class="pl-k">char</span> name[<span class="pl-c1">40</span>];
+   	<span class="pl-k">int</span> phone_number;
+ };</pre>
+  </div> <p><em>this union occupies 40 bytes</em></p> </li> 
+</ul> 
+<p>The disadvantage of using a union instead of a struct is that <strong>memebers of a union can be accessed only one at a time</strong> because the physical location to write them is the same. So if I write 2 different members of the union one after the other, when writing the second the location will be overwritten and the value of the first member will get corrupted (retrieving the first member will return a random value).</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cstring<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">union</span> student {
+	<span class="pl-k">int</span> roll_no;
+	<span class="pl-k">int</span> phone_number;
+	<span class="pl-k">char</span> name[<span class="pl-c1">30</span>];
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">union</span> student p1;
+	p1.<span class="pl-smi">roll_no</span> = <span class="pl-c1">1</span>;
+	p1.<span class="pl-smi">phone_number</span> = <span class="pl-c1">1234567822</span>; 
+	<span class="pl-c1">strcpy</span>(p1.<span class="pl-smi">name</span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Brown<span class="pl-pds">&quot;</span></span>); 
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>roll_no : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">roll_no</span> &lt;&lt; endl;		<span class="pl-c"><span class="pl-c">//</span> prints some random value</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>phone_number : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">phone_number</span> &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints some random value</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>name : <span class="pl-pds">&quot;</span></span> &lt;&lt; p1.<span class="pl-smi">name</span> &lt;&lt; endl;			<span class="pl-c"><span class="pl-c">//</span> prints &quot;Brown&quot;</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="oop-in-c" class="anchor" href="#oop-in-c" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OOP in C++</h1> 
+<p>C++, opposite to C, supports <strong>Object Oriented Programming</strong>.</p> 
+<h3> <a id="classes" class="anchor" href="#classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classes</h3> 
+<p>A <strong>class</strong> is a generalization of a certain data structure:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ 
+using namespace std;
+ 
+class Rectangle {
+	public:
+		<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c">		 * data members declaration</span>
+<span class="pl-c">		 <span class="pl-c">*/</span></span>
+		<span class="pl-k">int</span> length;         <span class="pl-c"><span class="pl-c">//</span>length of rectangle</span>
+		<span class="pl-k">int</span> breadth;        <span class="pl-c"><span class="pl-c">//</span>breadth of rectangle</span>
+		<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c">		 * member functions</span>
+<span class="pl-c">		 <span class="pl-c">*/</span></span>
+		<span class="pl-c"><span class="pl-c">//</span> constructor</span>
+		<span class="pl-c1">Rectangle::Rectangle</span>() { }
+		<span class="pl-c"><span class="pl-c">//</span> destructor</span>
+		Rectangle::~<span class="pl-c1">Rectangle</span>() { }
+		<span class="pl-c"><span class="pl-c">//</span> custom member functions declaration</span>
+		<span class="pl-k">void</span> <span class="pl-smi">setLength</span>(<span class="pl-k">int</span> l);
+		<span class="pl-k">void</span> <span class="pl-smi">setBreadth</span>(<span class="pl-k">int</span> b);
+		<span class="pl-k">int</span> <span class="pl-smi">getArea</span>();
+};
+
+<span class="pl-c"><span class="pl-c">//</span> custom member functions definition</span>
+<span class="pl-k">void</span> <span class="pl-en">Rectangle::setLength</span>(<span class="pl-k">int</span> l) {
+	length = l;
+}
+<span class="pl-k">void</span> <span class="pl-en">Rectangle::setBreadth</span>(<span class="pl-k">int</span> b) {
+	breadth = b;
+}
+<span class="pl-k">int</span> <span class="pl-en">Rectangle::getArea</span>() {
+	<span class="pl-k">return</span> length * breadth;
+}</pre>
+</div> 
+<p>As you can see a C++ class is made of 2 main members</p> 
+<ol> 
+ <li> <strong>data members</strong>: in the class Rectangle, <em>length</em> and <em>breadth</em> are the data members since they store the information of the objects of the class.</li> 
+ <li> <strong>member functions</strong>: <em>setLength()</em>, <em>setBreadth</em> and <em>getArea()</em> are the member functions of the Rectangle class. All member functions have <strong>classname::</strong> (<em>Rectangle::</em>) before the function name, in order to tell the compiler that the function belongs to that given class.<br /> Two special member functions are always present in any C++ class: 
+  <ul> 
+   <li> <strong>Constructor</strong>: is a special function which is used to initialize the objects of the class. It is <strong>named as the class</strong>, has <strong>no return type</strong>, <strong>can have parameters or can either be empty</strong>. Even if no constructor is defined in the class, compiler automatically calls a default public constructor when instancing an object of the class.</li> 
+   <li> <strong>Destructor</strong>: is the opposite of the constructor and is used to <strong>destroy the object whenever the it goes out of scope</strong>. Has the exact <strong>same syntax of an empty constructor</strong>, but the name is <strong>preceeded by ~</strong>. Destructor is always empty and gets <strong>automatically called when the object goes out of scope</strong> (Ex. at the end of a code block where I declared the object), it can be invoked manually with the <em>delete</em> operator when allocating memory dynamically. Even if there is no destructor defined in the class, compiler automatically calls a default destructor when distructing an object of the class.</li> 
+  </ul> </li> 
+</ol> 
+<h3> <a id="objects" class="anchor" href="#objects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Objects</h3> 
+<p>An object is an instance of a given class:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Rectangle rt;	<span class="pl-c"><span class="pl-c">//</span> creating a Rectangle object     </span>
+	rt.<span class="pl-c1">setLength</span>(<span class="pl-c1">7</span>);	<span class="pl-c"><span class="pl-c">//</span> calling member functions on the created object using the . syntax</span>
+	rt.<span class="pl-c1">setBreadth</span>(<span class="pl-c1">4</span>);
+	<span class="pl-k">int</span> area = rt.<span class="pl-c1">getArea</span>();	
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Area : <span class="pl-pds">&quot;</span></span> &lt;&lt; area &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ul> 
+ <li>Objects can be stored into arrays using the syntax: 
+  <div class="highlight highlight-source-c">
+   <pre> Classname arrayName[size];
+ 
+ <span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+ Student students[<span class="pl-c1">5</span>];</pre>
+  </div> </li> 
+ <li>Objects can be created using the <em>new</em> operator when allocating memory dynamically.</li> 
+</ul> 
+<h3> <a id="access-modifiers" class="anchor" href="#access-modifiers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Access Modifiers</h3> 
+<p>Are used to decide how the members (data and functions) of a class can be accessed. There are three types of access modifiers in C++:</p> 
+<ul> 
+ <li> <strong>public</strong>: the member is accessible directly <strong>everywhere outside</strong> the Class.</li> 
+ <li> <strong>private</strong>: the member is accessible directly <strong>only inside</strong> the Class. By default, all the members of a class are private.</li> 
+ <li> <strong>protected</strong>: the member is accessible directly <strong>only inside the class and its subclasses</strong>. Usually data members are declared private and function members are declared public in order to respect the principles of <strong>encapsulation</strong> (no direct access to data, but only to the functions that handles it), anyway it's not an imperative to do so.</li> 
+</ul> 
+<h3> <a id="static" class="anchor" href="#static" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Static</h3> 
+<p>Class <strong>data and function members</strong> can be declared <strong>static</strong> so that they can be used without the need to instatiate an object of the class:</p> 
+<div class="highlight highlight-source-c">
+ <pre>Classname::staticMember
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ 
+using namespace std;
+ 
+class Rectangle {
+	public:
+		<span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-smi">printArea</span>( <span class="pl-k">int</span> l, <span class="pl-k">int</span> b ) {	<span class="pl-c"><span class="pl-c">//</span> static function member</span>
+			cout &lt;&lt; l*b &lt;&lt; endl;
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-c1">Rectangle::printArea</span>(<span class="pl-c1">4</span>,<span class="pl-c1">7</span>);	<span class="pl-c"><span class="pl-c">//</span> syntax to call a static member</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="initialization-list" class="anchor" href="#initialization-list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialization List</h3> 
+<p>Is a particular way of initializing class members when calling the constructor. It can be used anytime instead of the standard constructor syntax, anyway it needs to be used in some specific cases:</p> 
+<ul> 
+ <li>Initialize a data member that is defined as <strong>const</strong>: 
+  <div class="highlight highlight-source-c">
+   <pre> #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+ 
+ using namespace std;
+ 
+ class Rectangle {
+ 	<span class="pl-k">const</span> <span class="pl-k">int</span> length;
+ 	<span class="pl-k">const</span> <span class="pl-k">int</span> breadth;
+ 	public:
+ 		<span class="pl-c1">Rectangle</span>( <span class="pl-k">int</span> l, <span class="pl-k">int</span> b ) : <span class="pl-c1">length</span>(l), <span class="pl-c1">breadth</span>(b) {	<span class="pl-c"><span class="pl-c">//</span> initialization list syntax</span>
+ 		}
+ 		<span class="pl-k">int</span> <span class="pl-smi">printArea</span>() {
+ 			<span class="pl-k">return</span> length * breadth;
+ 		}
+ };
+ 
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	Rectangle <span class="pl-smi">rt</span>( <span class="pl-c1">7</span>, <span class="pl-c1">4</span> );
+ 	cout &lt;&lt; rt.<span class="pl-c1">printArea</span>() &lt;&lt; endl;
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> </li> 
+ <li>See <strong>&quot;Constructor in sub-classes&quot;</strong> -&gt; <em>&quot;Calling parent-class parameterized constructor&quot;</em> paragraph</li> 
+</ul> 
+<h3> <a id="inheritance" class="anchor" href="#inheritance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inheritance</h3> 
+<p>C++ supports all standard types of inheritance (single, multilevel, hierarchical, etc) with the definition of parent-classes and sub-classes.<br /> When a <strong>sub-class</strong> extends a parent-class it <strong>inherits all data and function members (if not private) of the parent class</strong>. Obviously the parent-class cannot access the members of its sub-classes. Here is a simple inheritance example:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+
+class Polygon {
+	protected:
+    	<span class="pl-k">int</span> width, height;
+	public:
+    	<span class="pl-k">void</span> <span class="pl-smi">setValues</span> (<span class="pl-k">int</span> a, <span class="pl-k">int</span> b) {	<span class="pl-c"><span class="pl-c">//</span> declaring and implementing member function</span>
+    		width=a;
+    		height=b;
+    	}
+};
+
+class Rectangle: public Polygon { <span class="pl-c"><span class="pl-c">//</span> class extension syntax</span>
+	private:
+  		<span class="pl-k">int</span> area;
+  	public:
+  		<span class="pl-k">int</span> <span class="pl-smi">getarea</span>() {	<span class="pl-c"><span class="pl-c">//</span> declaring and implementing member function</span>
+  			<span class="pl-k">return</span> width * height;
+  		}
+};</pre>
+</div> 
+<h5> <a id="constructor-in-sub-classes" class="anchor" href="#constructor-in-sub-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constructor in sub-classes</h5> 
+<ul> 
+ <li>The constructor of the sub-class always calls the constructor of the parent-class, but actually there are 2 cases to distinct: 
+  <ul> 
+   <li> <strong>Calling parent-class constructor with no parameters</strong>: in this case even if no explicit call is present in the sub-class constructor, the parent-class constructor gets always called by the compiler</li> 
+  </ul> 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+ #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+ using namespace std;
+ 
+ class A 	{
+ 	public:
+ 		<span class="pl-c1">A</span>() {
+ 			cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Constructor of A<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+ 		}
+ };
+ 
+ class B : public A {	<span class="pl-c"><span class="pl-c">//</span> B extends A</span>
+ 	public:
+ 		<span class="pl-c1">B</span>() {
+ 			cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Constructor of B<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+ 		}
+ };
+ 
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	B b;	<span class="pl-c"><span class="pl-c">//</span> prints: &quot;Constructor of A&quot; &quot;Constructor of B&quot;</span>
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> 
+  <ul> 
+   <li> <strong>Calling parent-class parameterized constructor</strong>: parameterized parent class constructors are not called automatically while instantiating a child object. In order to call a parent-class parameterized constructor we need to use the <strong>initialization list</strong> in the sub-class:</li> 
+  </ul> 
+  <div class="highlight highlight-source-c">
+   <pre> #<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+ using namespace std;
+
+ class Rectangle {
+ 	<span class="pl-k">int</span> length;
+ 	<span class="pl-k">int</span> breadth;
+ 	public:
+ 		<span class="pl-c1">Rectangle</span>( <span class="pl-k">int</span> l, <span class="pl-k">int</span> b ) {	<span class="pl-c"><span class="pl-c">//</span> parameterized parent-class constructor</span>
+ 			length = l;
+ 			breadth = b;
+ 		}
+ 		<span class="pl-k">int</span> <span class="pl-smi">getArea</span>() {
+ 			<span class="pl-k">return</span> length * breadth;
+ 		}
+ };
+
+ class Square : public Rectangle	{	<span class="pl-c"><span class="pl-c">//</span> Square extends Rectangle</span>
+ 	public:
+ 		<span class="pl-c1">Square</span>(<span class="pl-k">int</span> a) : <span class="pl-c1">Rectangle</span>( a, a ) {	<span class="pl-c"><span class="pl-c">//</span> initialization list syntax, calling super constructor with the param passed to the child constuctor</span>
+ 		}
+ };
+
+ <span class="pl-k">int</span> <span class="pl-en">main</span>() {
+ 	Square <span class="pl-smi">s</span>(<span class="pl-c1">2</span>);	<span class="pl-c"><span class="pl-c">//</span> creating a Square with side=2, internally Square constructor calls Rectangle constructor</span>
+ 	<span class="pl-k">int</span> area;
+ 	area = s.<span class="pl-c1">getArea</span>();	<span class="pl-c"><span class="pl-c">//</span> calling a parent function from the child object</span>
+ 	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Area : <span class="pl-pds">&quot;</span></span> &lt;&lt; area &lt;&lt; endl;
+ 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+ }</pre>
+  </div> </li> 
+</ul> 
+<h5> <a id="multiple-inheritance" class="anchor" href="#multiple-inheritance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Multiple Inheritance</h5> 
+<p>Unlike in Java, in C++ a sub-class can extend more than one parent classes:</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class Area {
+	public:
+		<span class="pl-k">int</span> <span class="pl-smi">getArea</span>(<span class="pl-k">int</span> l, <span class="pl-k">int</span> b) {
+			<span class="pl-k">return</span> l * b;
+		}
+};
+
+class Perimeter {
+	public:
+		<span class="pl-k">int</span> <span class="pl-smi">getPerimeter</span>(<span class="pl-k">int</span> l, <span class="pl-k">int</span> b) {
+			<span class="pl-k">return</span> <span class="pl-c1">2</span>*(l + b);
+		}
+};
+
+class Rectangle : public Area, public Perimeter {	<span class="pl-c"><span class="pl-c">//</span> multiple inheritance syntax</span>
+	<span class="pl-k">int</span> length;
+	<span class="pl-k">int</span> breadth;
+	public:
+		<span class="pl-c1">Rectangle</span>() {
+			length = <span class="pl-c1">7</span>;
+			breadth = <span class="pl-c1">4</span>;
+		}
+		<span class="pl-k">int</span> <span class="pl-smi">area</span>() {
+			<span class="pl-k">return</span> <span class="pl-c1">Area::getArea</span>(length, breadth);	<span class="pl-c"><span class="pl-c">//</span> super calls need namespace to identify which of the parent-classes I'm calling</span>
+		}
+		<span class="pl-k">int</span> <span class="pl-smi">perimeter</span>() {
+			<span class="pl-k">return</span> <span class="pl-c1">Perimeter::getPerimeter</span>(length, breadth);	<span class="pl-c"><span class="pl-c">//</span> super calls need namespace to identify which of the parent-classes I'm calling</span>
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Rectangle rt;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Area : <span class="pl-pds">&quot;</span></span> &lt;&lt; rt.<span class="pl-c1">area</span>() &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints Area : 28</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Perimeter : <span class="pl-pds">&quot;</span></span> &lt;&lt; rt.<span class="pl-c1">perimeter</span>() &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> prints Perimeter : 22</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="overloading-and-overrriding" class="anchor" href="#overloading-and-overrriding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overloading and Overrriding</h3> 
+<h5> <a id="overloading" class="anchor" href="#overloading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overloading</h5> 
+<ol> 
+ <li>Constructor Overloading <strong>Constructor overloading allows</strong> to have <strong>multiple constructors</strong> in the same class but <strong>with different arguments</strong>.</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>string<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class Student {
+	string name;
+	public:
+		<span class="pl-c1">Student</span>() {	<span class="pl-c"><span class="pl-c">//</span> constructor 1</span>
+			name = <span class="pl-s"><span class="pl-pds">&quot;</span>unknown<span class="pl-pds">&quot;</span></span>;
+		}
+		<span class="pl-c1">Student</span>( string n ) {	constructor <span class="pl-c1">2</span>
+			name = n;
+		}
+		
+		<span class="pl-k">void</span> <span class="pl-smi">printName</span>() {
+			cout &lt;&lt; name &lt;&lt; endl;
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Student <span class="pl-smi">a</span>( <span class="pl-s"><span class="pl-pds">&quot;</span>xyz<span class="pl-pds">&quot;</span></span> );
+	Student b;
+	a.<span class="pl-c1">printName</span>();	<span class="pl-c"><span class="pl-c">//</span> prints xyz</span>
+	b.<span class="pl-c1">printName</span>();	<span class="pl-c"><span class="pl-c">//</span> prints unknown</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<ol start="2"> 
+ <li>Function Overloading A function in a class can be overloaded by any number of other functions having <strong>same name</strong> and <strong>different arguments</strong>:</li> 
+</ol> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class Rectangle {
+	public:
+		<span class="pl-k">void</span> <span class="pl-smi">printArea</span>(<span class="pl-k">int</span> x, <span class="pl-k">int</span> y) {
+			cout &lt;&lt; x * y &lt;&lt; endl;
+		}
+		<span class="pl-k">void</span> <span class="pl-smi">printArea</span>(<span class="pl-k">double</span> x, <span class="pl-k">double</span> y) {
+			cout &lt;&lt; x * x &lt;&lt; endl;
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Rectangle rt;
+	rt.<span class="pl-c1">printArea</span>(<span class="pl-c1">2</span>, <span class="pl-c1">4</span>);
+	rt.<span class="pl-c1">printArea</span>(<span class="pl-c1">1.7</span>, <span class="pl-c1">4.6</span>);
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h5> <a id="overriding" class="anchor" href="#overriding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overriding</h5> 
+<p>Overriding mechanism refers to a parent-class and sub-class situation where the sub-class redefines a parent function, changing its behavior. All child objects will recall the redefined version of the function (<strong>Polymorphism</strong>).</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class Animals {
+	public:
+		<span class="pl-k">void</span> <span class="pl-smi">sayHi</span>() {
+			cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Hi, i'm an ANIMAL<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+		}
+};
+
+class Dogs : public Animals {	<span class="pl-c"><span class="pl-c">//</span> Dogs extends Animals</span>
+	public:
+		<span class="pl-k">void</span> <span class="pl-smi">sayHi</span>() {
+			cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Hi, i'm a DOG<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Dogs d;
+	d.<span class="pl-c1">sayHi</span>();	<span class="pl-c"><span class="pl-c">//</span> prints &quot;Hi, i'm a DOG&quot;</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>Conditions for overriding are:</p> 
+<ul> 
+ <li>Functions of both parent and child class must have the same name.</li> 
+ <li>Functions must have the same argument list and return type.</li> 
+ <li>A function declared static cannot be overridden.</li> 
+ <li>If a function cannot be inherited, it cannot be overridden.</li> 
+ <li> <strong>Constructors cannot be overridden</strong>.</li> 
+</ul> 
+<h3> <a id="abstact-classes-and-interfaces" class="anchor" href="#abstact-classes-and-interfaces" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstact Classes and Interfaces</h3> 
+<p>These kind of classes are based on the concept of <strong>virtual functions</strong>. A virtual function is <strong>defined in a parent-class using <em>virtual</em> keyword</strong> and then <strong>implemented into sub-classes</strong>.<br /> <strong>Virtual functions declared empty (=0)</strong> in a parent-class are called <strong>pure virtual functions</strong>:</p> 
+<div class="highlight highlight-source-c">
+ <pre>virtual <span class="pl-k">void</span> <span class="pl-en">functionName</span>() = 0	<span class="pl-c"><span class="pl-c">//</span> pure virtual function</span></pre>
+</div> 
+<h5> <a id="abstract-class" class="anchor" href="#abstract-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract Class</h5> 
+<p>Is a <strong>class that contains at least one pure virtual function and whose objects cannot be instantiated</strong>. It is used as a parent-class to define other sub-classes whose object will be concretely instantiated. An abstract class can define <strong>real data and function members</strong> too. <strong>Subclasses of an abstract base-class must define the abstract methods</strong>, otherwise, they will also become abstract classes.</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class Animals {	<span class="pl-c"><span class="pl-c">//</span> abstract class definition</span>
+	public:
+		virtual <span class="pl-k">void</span> <span class="pl-smi">sound</span>() = <span class="pl-c1">0</span>;	<span class="pl-c"><span class="pl-c">//</span> pure virtual function</span>
+};
+
+class Dogs : public Animals {	<span class="pl-c"><span class="pl-c">//</span> Dogs is a concrete implementation of Animals</span>
+	public:
+		<span class="pl-k">void</span> <span class="pl-smi">sound</span>() {
+			cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Woof<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Dogs d;
+	d.<span class="pl-c1">sound</span>();
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p>_note: when implementing a pure virtual function in a sub-class the compiler binds the function into the call at runtime (<strong>late binding</strong>), unlike in all standard functions definition where binding function calls with function bodies is done at compile time (<em>early binding</em>).</p> 
+<h5> <a id="interface" class="anchor" href="#interface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interface</h5> 
+<p>Is an <strong>abstract class in which all functions are pure virtual and there are no member variables</strong>. When implementing an interface all pure virtual functions must be implemented in the sub-classes. Like in abstract classes, it's impossible to instantiate objects of an interface. <strong>The naming for interfaces usually begins with a capital I</strong>:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+class IShape {	<span class="pl-c"><span class="pl-c">//</span> IShape interface</span>
+	public:
+		virtual <span class="pl-k">int</span> <span class="pl-smi">getArea</span>() = <span class="pl-c1">0</span>;
+		virtual <span class="pl-k">int</span> <span class="pl-smi">getPerimeter</span>() = <span class="pl-c1">0</span>;
+};
+
+class Rectangle : public IShape {	<span class="pl-c"><span class="pl-c">//</span> Rectangle implements IShape interface</span>
+	<span class="pl-k">int</span> length;
+	<span class="pl-k">int</span> breadth;
+	public:
+		<span class="pl-c1">Rectangle</span>(<span class="pl-k">int</span> l, <span class="pl-k">int</span> b)	{
+			length = l;
+			breadth = b;
+		}
+		<span class="pl-k">int</span> <span class="pl-smi">getArea</span>() {
+			<span class="pl-k">return</span> length * breadth;
+		}
+		<span class="pl-k">int</span> <span class="pl-smi">getPerimeter</span>() {
+			<span class="pl-k">return</span> <span class="pl-c1">2</span>*(length + breadth);
+		}
+};
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Rectangle <span class="pl-smi">rt</span>(<span class="pl-c1">7</span>, <span class="pl-c1">4</span>);
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Rectangle :<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Area : <span class="pl-pds">&quot;</span></span> &lt;&lt; rt.<span class="pl-c1">getArea</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span> Perimeter : <span class="pl-pds">&quot;</span></span> &lt;&lt; rt.<span class="pl-c1">getPerimeter</span>() &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="file-io" class="anchor" href="#file-io" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FILE I/O</h1> 
+<p>To deal with files input and output streams, the <em>fstream</em> C++ standard library comes in handy.<br /> The lib exposes the following <em>data types</em>:</p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Data type</th> 
+   <th>Description</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>ofstream</td> 
+   <td>It is used to create files and write on files.</td> 
+  </tr> 
+  <tr> 
+   <td>ifstream</td> 
+   <td>It is used to read from files.</td> 
+  </tr> 
+  <tr> 
+   <td>fstream</td> 
+   <td>It can perform the function of both ofstream and ifstream which means it can create files, write on files, and read from files.</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<p>And the following <em>modes</em> that can be used to specify the purpose we're opening the file for:</p> 
+<table> 
+ <thead> 
+  <tr> 
+   <th>Mode</th> 
+   <th>Description</th> 
+  </tr> 
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td>ios::app</td> 
+   <td>opens a text file for appending. (appending means to add text at the end).</td> 
+  </tr> 
+  <tr> 
+   <td>ios::ate</td> 
+   <td>opens a file for output and move the read/write control to the end of the file.</td> 
+  </tr> 
+  <tr> 
+   <td>ios::in</td> 
+   <td>opens a text file for reading.</td> 
+  </tr> 
+  <tr> 
+   <td>ios::out</td> 
+   <td>opens a text file for writing.</td> 
+  </tr> 
+  <tr> 
+   <td>ios::trunc</td> 
+   <td>truncates the content before opening a file, if file exists.</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<p>Here is a complete example of reading and writing on a file:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>fstream<span class="pl-pds">&gt;</span></span>
+
+using namespace std;
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+
+  <span class="pl-k">char</span> text[<span class="pl-c1">200</span>];
+
+  fstream file;
+  file.<span class="pl-c1">open</span> (<span class="pl-s"><span class="pl-pds">&quot;</span>example.txt<span class="pl-pds">&quot;</span></span>, ios::out | ios::in );	<span class="pl-c"><span class="pl-c">//</span> opening file in read and write mode</span>
+
+  cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Write text to be written on file.<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+  cin.<span class="pl-c1">getline</span>(text, <span class="pl-k">sizeof</span>(text));	<span class="pl-c"><span class="pl-c">//</span> acquiring text from user</span>
+
+  <span class="pl-c"><span class="pl-c">//</span> Writing on file</span>
+  file &lt;&lt; text &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> writing text to file using &lt;&lt; operator</span>
+
+  <span class="pl-c"><span class="pl-c">//</span> Reding from file</span>
+  file &gt;&gt; text;		<span class="pl-c"><span class="pl-c">//</span> reading from file using &gt;&gt; operator</span>
+  cout &lt;&lt; text &lt;&lt; endl;
+
+  <span class="pl-c"><span class="pl-c">//</span>closing the file</span>
+  file.<span class="pl-c1">close</span>();		<span class="pl-c"><span class="pl-c">//</span> always close opened files </span>
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="dynamic-memory-allocation" class="anchor" href="#dynamic-memory-allocation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DYNAMIC MEMORY ALLOCATION</h1> 
+<p>Memory is divided in 2 main parts used differently by C++ programs:</p> 
+<ul> 
+ <li> <strong>stack</strong>: memory from the stack is used by all the members which are declared inside functions. Note that main is also a function and this <strong>is the normal memory used for most elements of C++ programs</strong>.</li> 
+ <li> <strong>heap</strong>: memory from the heap is <strong>commonly unused</strong> and <strong>can be used to dynamically allocate the memory at runtime</strong>, using <strong>new</strong> and <strong>delete</strong> operators.</li> 
+</ul> 
+<h3> <a id="new-and-delete-operators" class="anchor" href="#new-and-delete-operators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>new</em> and <em>delete</em> operators</h3> 
+<p>In C <em>malloc</em> and <em>free</em> operators are used to reserve and cleanup a given block of memory. In C++ these legacy operators are still supported, but it's reccomended ti use their respective C++ counterparts for dynamic memory allocation:</p> 
+<ul> 
+ <li> <p><strong>new</strong> : reserves a contiguous memory block that is always accessible throughout the program (unlike the automatic memory which is available only inside the function or block where it's declared).<br /> This is the way of dynamically allocating a variable <em>data</em>:</p> 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-k">int</span> *data = new <span class="pl-k">int</span>;	<span class="pl-c"><span class="pl-c">//</span> dynamic allocation of a variable</span></pre>
+  </div> <p><em>note that we use pointers to allocate memory dynamically.</em><br /> This simple dynamic var declaration will allocate in memory the space of an integer for our var.</p> </li> 
+ <li> <p><strong>delete</strong>: simply frees up dynamically allocated memory, so that it becomes available for future use. It's reccomended to delete a given allocation when finished using related data it.</p> 
+  <div class="highlight highlight-source-c">
+   <pre> <span class="pl-en">delete</span> (data);</pre>
+  </div> <p>Once deleted, a pointer will point to deallocated memory and will be called a dangling pointer. If we further try to delete a dangling pointer, we will get some undefined behavior.</p> </li> 
+</ul> 
+<h3> <a id="dynamic-allocation-of-arrays" class="anchor" href="#dynamic-allocation-of-arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dynamic Allocation of Arrays</h3> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">char</span> *arr = new <span class="pl-k">char</span>[length];
+...
+delete arr;
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">int</span> length, sum = <span class="pl-c1">0</span>;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter the number of students in the group<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	cin &gt;&gt; length;
+	<span class="pl-k">int</span> *marks = new <span class="pl-k">int</span>[length];	<span class="pl-c"><span class="pl-c">//</span> marks dynamic array allocation</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Enter the marks of the students<span class="pl-pds">&quot;</span></span> &lt;&lt; endl;
+	<span class="pl-k">for</span>( <span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; length; i++ ) {
+		cin &gt;&gt; *(marks+i);
+	}
+	<span class="pl-k">for</span>( <span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; length; i++ ) {
+		sum += *(marks+i);
+	}
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>sum is <span class="pl-pds">&quot;</span></span> &lt;&lt; sum &lt;&lt; endl;
+	delete[] marks;	<span class="pl-c"><span class="pl-c">//</span> release memory allocated for marks</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h3> <a id="dynamic-allocation-of-objects" class="anchor" href="#dynamic-allocation-of-objects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dynamic Allocation of Objects</h3> 
+<p>While normally dealing with objects in the <em>stack</em>, memory is allocated <em>constructor</em> and released by <em>destructor</em> when objects go out of scope. The same thing can be done dynamically in the <em>heap</em> using <em>pointers</em> and <em>new</em>/<em>delete</em> operators:</p> 
+<div class="highlight highlight-source-c">
+ <pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+class A {
+	 public:
+       	<span class="pl-c1">A</span>() { 
+    	  cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Constructor<span class="pl-pds">&quot;</span></span> &lt;&lt; endl; 
+      	}
+       	~<span class="pl-c1">A</span>() { 
+    	   cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Destructor<span class="pl-pds">&quot;</span></span> &lt;&lt; endl; 
+        }
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	A* a = new A;
+	delete a; <span class="pl-c"><span class="pl-c">//</span> Delete array</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<p><em>note: the same can be done with array of objects using the dynamic array allocation syntax</em></p> 
+<h1> <a id="enums" class="anchor" href="#enums" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ENUMS</h1> 
+<p>An enumeration is a user-defined datatype that consists of a group of constant values. <strong>Enum values in C++ can only be integers</strong>, if no value is specified for an element, then an automatic value is assigned (automatic values goes like 0,1,2,etc from first to last element).</p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">enum</span> enum_name {
+    element1,	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 0</span>
+    element2,	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 1</span>
+    element3	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 2</span>
+};
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">enum</span> Season {
+	Summer = <span class="pl-c1">10</span>,
+	Spring = <span class="pl-c1">15</span>,
+	Winter = <span class="pl-c1">20</span>,
+	Autumn = <span class="pl-c1">25</span>
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	<span class="pl-k">enum</span> Season w;	<span class="pl-c"><span class="pl-c">//</span> enum declaration</span>
+	w = Winter;	<span class="pl-c"><span class="pl-c">//</span> enum initialization</span>
+	std::cout &lt;&lt; w;	<span class="pl-c"><span class="pl-c">//</span> prints 20</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h5> <a id="enum-classes" class="anchor" href="#enum-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>enum classes</h5> 
+<p>Due to the fact that enums are simple integer values, and to avoid confusion between different enums whose elements share the same values, enums can be put into a scope using <strong>class enums</strong></p> 
+<div class="highlight highlight-source-c">
+ <pre><span class="pl-k">enum</span> class enum_name {
+    element1,	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 0</span>
+    element2,	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 1</span>
+    element3	<span class="pl-c"><span class="pl-c">//</span> no int is assigned, element value will be 2</span>
+};
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">enum</span> class Season { 
+    Summer, 
+    Spring, 
+    Winter, 
+    Autumn
+};
+<span class="pl-k">enum</span> class Color {
+    Blue,
+    Pink,
+    Green
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    Season s = Season::Summer;	<span class="pl-c"><span class="pl-c">//</span> syntax to access a scoped enum</span>
+    Color c = Color::Blue;	<span class="pl-c"><span class="pl-c">//</span> syntax to access a scoped enum</span>
+    <span class="pl-k">if</span>( s == c ) {
+    	std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Equal<span class="pl-pds">&quot;</span></span> &lt;&lt; std::endl;
+    }
+    <span class="pl-k">else</span> {
+    	std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Not Equal<span class="pl-pds">&quot;</span></span> &lt;&lt; std::endl;	<span class="pl-c"><span class="pl-c">//</span> even if Summer and Blue have both value 0, &quot;Not Equal&quot; gets printed thanks to the use of enum classes</span>
+    }
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h1> <a id="templates" class="anchor" href="#templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TEMPLATES</h1> 
+<p>In C++ templates are the instrument used for <em>generic programming</em> or in other words programming independently from data types (similar to Java generics).<br /></p> 
+<h5> <a id="template-functions" class="anchor" href="#template-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Template Functions</h5> 
+<p>Template functions can handle arguments of generic data-types. Note that even more than one generic data type can be used in case data-types are different from one argument to the other:</p> 
+<div class="highlight highlight-source-c">
+ <pre>template&lt;class T&gt; T <span class="pl-en">functionName</span>(T x, T y) {	<span class="pl-c"><span class="pl-c">//</span> template function definition</span>
+	...
+	<span class="pl-k">return</span> ...;
+}
+<span class="pl-c"><span class="pl-c">/*</span></span>
+<span class="pl-c"> * note that the generic type T used in the declaration is just an identifier of a generic data-type. </span>
+<span class="pl-c"> * It could have been every other identifier or even more than one identifier could be used in case </span>
+<span class="pl-c"> * the class handles several generic arguments [Ex. template&lt;class T1, class T2&gt; T2 functionName(T1 x, T2 y) ].</span>
+<span class="pl-c"> <span class="pl-c">*/</span></span>
+ 
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+template &lt;typename T&gt; T <span class="pl-en">sum</span>( T x, T y) {	<span class="pl-c"><span class="pl-c">//</span> template function definition</span>
+    <span class="pl-k">return</span> x + y;
+}
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Sum : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-c1">sum</span>(<span class="pl-c1">3</span>, <span class="pl-c1">5</span>) &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> calling template function with int params</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Sum : <span class="pl-pds">&quot;</span></span> &lt;&lt; <span class="pl-c1">sum</span>(<span class="pl-c1">3.4</span>, <span class="pl-c1">5.2</span>) &lt;&lt; endl;	<span class="pl-c"><span class="pl-c">//</span> calling template function with float params</span>
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<h5> <a id="template-classes" class="anchor" href="#template-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Template Classes</h5> 
+<p>Using templates we can define classes capable of handling different data-types:</p> 
+<div class="highlight highlight-source-c">
+ <pre>template&lt;class T&gt; class MyClass {	<span class="pl-c"><span class="pl-c">//</span> template class definition</span>
+	...
+};
+
+<span class="pl-c"><span class="pl-c">//</span> Ex.</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+using namespace std;
+template &lt;class T&gt; class Student {	<span class="pl-c"><span class="pl-c">//</span> template class definition</span>
+	T marks1;
+	T marks2;
+	public:
+		<span class="pl-c1">Student</span>( T m1, T m2 ) {
+			marks1 = m1;
+			marks2 = m2;
+		}
+		T <span class="pl-smi">totalMarks</span>() {
+			<span class="pl-k">return</span> marks1 + marks2;
+		}
+};
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+	Student&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">s1</span> ( <span class="pl-c1">45</span>, <span class="pl-c1">50</span> );		<span class="pl-c"><span class="pl-c">//</span> creating a specialization of the template class with int params</span>
+	Student&lt;<span class="pl-k">float</span>&gt; <span class="pl-c1">s2</span> ( <span class="pl-c1">47.5</span>, <span class="pl-c1">56.4</span> );	<span class="pl-c"><span class="pl-c">//</span> creating a specialization of the template class with float params</span>
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Total marks of student1 : <span class="pl-pds">&quot;</span></span> &lt;&lt; s1.<span class="pl-c1">totalMarks</span>() &lt;&lt; endl;
+	cout &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>Total marks of student2 : <span class="pl-pds">&quot;</span></span> &lt;&lt; s2.<span class="pl-c1">totalMarks</span>() &lt;&lt; endl;
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre>
+</div> 
+<hr /> 
+<p><em>References:</em><br /></p> 
+<ul> 
+ <li> <a href="https://www.codesdope.com/cpp-introduction/">codesdope C++ tutorial</a> 
+  <ul> 
+   <li>Tutorials covered:<br /> 
+    <ul> 
+     <li>[x] Introduction</li> 
+     <li>[x] Let's start</li> 
+     <li>[x] Gear up</li> 
+     <li>[x] Variables and literals</li> 
+     <li>[x] Operators</li> 
+     <li>[x] Decide if/else</li> 
+     <li>[x] Loops</li> 
+     <li>[x] Controlling loop</li> 
+     <li>[x] Function</li> 
+     <li>[x] Inline function</li> 
+     <li>[x] Scope of variables</li> 
+     <li>[x] Pointers</li> 
+     <li>[x] Array</li> 
+     <li>[x] Std::array</li> 
+     <li>[x] Std::vector</li> 
+     <li>[x] String</li> 
+     <li>[x] Std::string</li> 
+     <li>[x] Pre-processor</li> 
+     <li>[x] Structure</li> 
+     <li>[x] OOP</li> 
+     <li>[x] Classes and objects</li> 
+     <li>[x] Destructors</li> 
+     <li>[x] Initialization list</li> 
+     <li>[x] Subclass</li> 
+     <li>[x] Constructor overloading</li> 
+     <li>[x] Array of objects</li> 
+     <li>[x] More about functions</li> 
+     <li>[x] Multiple inheritance</li> 
+     <li>[x] Virtual and abstract</li> 
+     <li>[x] Encapsulation</li> 
+     <li>[x] Friend class and function</li> 
+     <li>[x] File i/o</li> 
+     <li>[x] Templates</li> 
+     <li>[x] Const keyword</li> 
+     <li>[x] Dynamic memory</li> 
+     <li>[x] Enum</li> 
+     <li>[x] Enum class</li> 
+     <li>[x] Union</li> 
+     <li>[x] typedef</li> 
+     <li>[x] Storage classes</li> 
+    </ul> </li> 
+  </ul> </li> 
+ <li> <a href="https://www.codesdope.com/practice/practice_cpp/">codesdope C++ practice</a> 
+  <ul> 
+   <li>Practice covered:<br /> 
+    <ul> 
+     <li>[x] Let's start</li> 
+     <li>[x] Variables</li> 
+     <li>[x] Operators</li> 
+     <li>[x] Decide if/else</li> 
+     <li>[x] Loops</li> 
+     <li>[x] Functions ?</li> 
+     <li>[x] Pointers ?</li> 
+     <li>[x] Array</li> 
+     <li>[x] String ?</li> 
+     <li>[x] Pre-processor</li> 
+     <li>[ ] Structure</li> 
+     <li>[ ] Classes, objects</li> 
+     <li>[ ] Subclass</li> 
+     <li>[ ] Array of objects</li> 
+     <li>[ ] Overloading</li> 
+     <li>[ ] Multi. inheritance</li> 
+    </ul> </li> 
+  </ul> </li> 
+</ul>
+</body>
+</html>
