@@ -52,9 +52,9 @@
 		- [x] Array
 		- [x] String ?
 		- [x] Pre-processor
-		- [ ] Structure
-		- [ ] Classes, objects
-		- [ ] Subclass
-		- [ ] Array of objects
-		- [ ] Overloading
-		- [ ] Multi. inheritance
+		- [x] Structure
+		- [x] Classes, objects
+		- [x] Subclass
+		- [x] Array of objects
+		- [x] Overloading
+		- [x] Multi. inheritance

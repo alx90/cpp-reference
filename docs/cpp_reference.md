@@ -1159,8 +1159,9 @@ int main(){
   		string name;
 		int phoneNumber;
 	};
-	struct student p1 = {1,"Brown",123443};
-  	struct student p2, p3=p1 ;	// copying p1 into p3
+	struct student p1 = {1,"Brown",123443};	// inline struc initialization
+  	struct student p2, p3=p1 ;		// copying p1 into p3
+  	// standard struct initialization
   	p2.id = 2; 
   	p2.name = "Sam";
   	p2.phoneNumber = 1234567822; 
@@ -1444,7 +1445,7 @@ Are used to decide how the members (data and functions) of a class can be access
 Usually data members are declared private and function members are declared public in order to respect the principles of __encapsulation__ (no direct access to data, but only to the functions that handles it), anyway it's not an imperative to do so.
 
 ### Static
-Class __data and function members__ can be declared __static__ so that they can be used without the need to instatiate an object of the class:
+Class __data and function members__ can be declared __static__ so that they can be used without the need to instantiate an object of the class:
 ```c
 Classname::staticMember
 
