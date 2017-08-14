@@ -1,9 +1,99 @@
-# BASIC REFERENCE
+Table of Contents
+=================
 
-### The main() function
-The execution of __every C++ program starts from the main()__ function. __All C++ programs must have a main()__ function.
+* [INTRODUCTION](#introduction)
+	* [The main function](#the-main-function)
+	* [Booleans and conditions evaluation](#booleans-and-conditions-evaluation)
+	* [Comments](#comments)
+	* [Pre-processor](#pre-processor)
+* [BASIC REFERENCE](#basic-reference)
+	* [Keywords](#keywords)
+		* [using](#using)
+		* [typedef](#typedef)
+		* [friend](#friend)
+	* [Operators](#operators)
+		* [arithmetic operators](#arithmetic-operators)
+		* [relational operators](#relational-operators)
+		* [logical operators](#logical-operators)
+		* [assignment operators](#assignment-operators)
+		* [increment and decrement operators](#increment-and-decrement-operators)
+		* [sizeof() operator](#sizeof-operator)
+	* [Conditional Operators](#conditional-operators)
+		* [if, else, else if](#if-else-else-if)
+		* [ternary operator](#ternary-operator)
+		* [switch case](#switch-case)
+	* [Loops](#loops)
+		* [while](#while)
+		* [for](#for)
+		* [do while](#do-while)
+		* [For-each](#for-each)
+* [VARIABLES AND LITERALS](#variables-and-literals)
+	* [Variables Initialization](#variables-initialization)
+	* [Data Types](#data-types)
+	* [Left and Right Values and Literals](#left-and-right-values-and-literals)
+	* [Casting](#casting)
+	* [Variables Scope](#variables-scope)
+	* [Storage Classes](#storage-classes)
+* [CONSTANTS](#constants)
+	* [Constant Variables](#constant-variables)
+	* [Constants in Functions](#constants-in-functions)
+	* [Constants in Classes](#constants-in-classes)
+	* [Const Pointers](#const-pointers)
+	* [Pointer to Const Variable](#pointer-to-const-variable)
+* [FUNCTIONS](#functions)
+	* [Function Scope](#function-scope)
+	* [Recursion](#recursion)
+	* [Inline Functions](#inline-functions)
+* [POINTERS](#pointers)
+	* ["Call by Value" and "Call By Reference"](#call-by-value-and-call-by-reference)
+* [STORAGE DATA-STRUCTURES](#storage-data-structures)
+	* [Arrays](#arrays)
+		* [declaration and initialization](#declaration-and-initialization)
+	* [Pointers to Array](#pointers-to-array)
+		* [passing an array to a function](#passing-an-array-to-a-function)
+		* [C-style arrays](#c-style-arrays)
+	* [Vectors](#vectors)
+	* [Strings](#strings)
+		* [taking string inputs and printing them](#taking-string-inputs-and-printing-them)
+		* [passing strings to functions](#passing-strings-to-functions)
+		* [C-style strings](#c-style-strings)
+	* [Structures](#structures)
+		* [passing structures to functions](#passing-structures-to-functions)
+	* [Unions](#unions)
+	* [ENUMS](#enums)
+		* [enum classes](#enum-classes)
+* [OOP in C  ](#oop-in-c)
+	* [Classes](#classes)
+	* [Objects](#objects)
+	* [Access Modifiers](#access-modifiers)
+	* [Static](#static)
+	* [Initialization List](#initialization-list)
+	* [Inheritance](#inheritance)
+		* [Constructor in sub-classes](#constructor-in-sub-classes)
+		* [Multiple Inheritance](#multiple-inheritance)
+	* [Overloading and Overrriding](#overloading-and-overrriding)
+		* [Overloading](#overloading)
+		* [Overriding](#overriding)
+	* [Abstact Classes and Interfaces](#abstact-classes-and-interfaces)
+		* [Abstract Class](#abstract-class)
+		* [Interface](#interface)
+* [DYNAMIC MEMORY ALLOCATION](#dynamic-memory-allocation)
+	* [new and delete operators](#new-and-delete-operators)
+	* [Dynamic Allocation of Arrays](#dynamic-allocation-of-arrays)
+	* [Dynamic Allocation of Objects](#dynamic-allocation-of-objects)
+* [TEMPLATES](#templates)
+	* [Template Functions](#template-functions)
+	* [Template Classes](#template-classes)
+* [FILE IO](#file-io)
 
-Here is a simple main() example which takes an input from the user and prints it onscreen:
+# INTRODUCTION
+C++ is a general-purpose programming language, mostly based on standard C, including generic programming and OOP(object-oriented programming) features. Compared to C, C++ offers also some low-level facilities for memory manipulation.
+- C++ is a case-sensitive language
+- unnecessary whitespaces and new lines are ignored just like in java
+
+### The main function
+The execution of __every C++ program starts from the main()__ function. __All C++ programs must have a one and only main()__ function.<br>
+Here is a simple main() example which takes an input from the user and prints it on screen:
 ```c
 #include <iostream>
 int main() {
@@ -14,18 +104,9 @@ int main() {
 }
 ```
 _notes:_
-
-- __std__ stands for the 'standard' namespace, a namespace is simply a container into wich you can define both functions and variables. The __std__ namespace resides into the __iostream__ libraqry, which is included using the __#include <iostream>__ syntax.
+- __std__ stands for the 'standard' namespace, a namespace is simply a container into wich you can define both functions and variables. The __std__ namespace resides into the __iostream__ library, which is included using the __#include <iostream>__ syntax.
 - __cout__ is a function defined into  __std__ namespace. Functions or variables inside namespaces can be accessed using the __::__ syntax.
 - __<< operator is the output operator__ that passes _Hello World_ string into the __std::cout__ function.
-
-### Comments
-- __//__ is used for single-line comments
-- __/&ast; &ast;/__ is used for multi-line comments
-
-### Info
-- C++ is a case-sensitive language
-- unnecessary whitespaces and new lines are ignored just like in java
 
 ### Booleans and conditions evaluation
 Unlike in C, in C++ booleans have a dedicated data type, but underneath they are still treated like simple numeric values (0 and 1).<br>
@@ -47,7 +128,19 @@ cout << false	// 0
 cout << true	// 1
 ```
 
-# keywords
+### Comments
+- __//__ is used for single-line comments
+- __/&ast; &ast;/__ is used for multi-line comments
+
+### Pre-processor
+C++ programs are pre-processed before being executed. The pre-processor simply replaces all pre-processor directives with the corresponding code. __All directives starting with a # symbol are pre-processor directives__.<br>
+Most common pre-processor directives are:
+- __#include__: inclusions are replaced by pre-processor before execution making header files available in our program.
+- __#define__: is used to define _constant values_ or _macros_ that will be available globally in the program. Pre-processor replaces the objects using #define around the program with their value, or macro code, before execution. 
+
+# BASIC REFERENCE
+
+### Keywords
 In any language keywords are reserved words with a special meaning to each of them. This is the list of C++ keywords:
 
 ||||
@@ -74,8 +167,8 @@ In any language keywords are reserved words with a special meaning to each of th
 |using|virtual|void|
 |volatile|wchar_t|while|
 
-### using
-using keyword can be used to alias a namespace or a function. In this example after the __using__ definition, __std__ namespace functions can be invoked without the need to specify the namespace itself:
+##### using
+_using_ keyword can be used to alias a namespace or a function. In this example after the __using__ definition, __std__ namespace functions can be invoked without the need to specify the namespace itself:
 ```c
 #include <iostream>
 int main() {
@@ -87,7 +180,37 @@ int main() {
 }
 ```
 
-### friend
+##### typedef
+_typedef_ keyword can be used to assign an alias to an existing data type. It works with structs and unions too.
+```c
+// Ex.1
+#include <iostream>
+int main(){
+	typedef unsigned int ui;	// giving the "unsigned int" data type the alias "ui"
+	ui i = 5, j = 8;		// defining unsigned integers like "ui"
+	std::cout << "i = " << i << std::endl;
+	std::cout << "j = " << j << std::endl;
+	return 0;
+}
+
+// Ex.2
+#include <iostream>
+#include <cstring>
+using namespace std;
+typedef struct student {	// giving the struct "student" the alias "st"
+  	int roll_no;
+  	char name[30];
+  	int phone_number;
+} st;
+int main(){
+	st p1;	// using the alias for student
+	p1.roll_no = 1; 
+  	cout << "roll no : " << p1.roll_no << endl;
+	return 0;
+}
+```
+
+##### friend
 friend keyword is used to grant the access to the private and protected members of a class to another class or function:
 - __friend function__: when declaring a class we can mark a function as _friend_ to grant it the access to all private and protected members of the class itself
 	```c
@@ -149,32 +272,261 @@ friend keyword is used to grant the access to the private and protected members 
 	}
 	```
 
-### typedef
-Is a keyword used to assign an alias to an existing data type. It can be used for struct and union too.
+### Operators
+
+##### arithmetic operators
+Perform arithmetic operations and return result.<br>
+_assuming a=8 and b=4_
+
+|Operator|Description|Example|
+|--------|-----------|-------|
+|+       |Adds operands                      |a+b=12|
+|-	     |Subtracts second operand from first|a-b=4|
+|&ast;	 |Multiplies both operands           |a*b=32|
+|/	     |Divides numerator by denominator   |a/b=2|
+|%	     |Modulus Operator returns the remainder of an integer division|a%b=0|
+
+##### relational operators
+Check the relationship between two operands and return 1 if the relationship is true and 0 if it is false.<br>
+_assuming a=8 and b=4_
+
+|Operator|Description             |Example          |
+|--------|------------------------|-----------------|
+|==	     |Equal to	              |(a == b) is false|
+|!=	     |Not equal to            |(a != b) is true |
+|>	     |Greater than            |(a > b) is true  |
+|<	     |Less than               |(a < b) is false |
+|>=	     |Greater than or equal to|(a >= b) is true |
+|<=	     |Less than or equal to   |(a <= b) is false|
+
+##### logical operators
+Perform logical operations and return 1 if the relationship is true and 0 if it is false.<br>
+_assuming a=1 and b=0_
+
+|Operator|Description                                                              |Example        |
+|--------|-------------------------------------------------------------------------|---------------|
+|&&|Logical AND. If both the operands are non-zero, then the condition becomes true|a&&b is 0|
+|&#124;&#124;|Logical OR. If any one or both the operands are non-zero, then the condition becomes true|a&#124;&#124;b is 1|
+|!|Logical NOT. It is used to reverse the condition. So, if a condition is true, ! makes it false and vice versa.|!a is 0|
+ -------- ------------------------------------------------------------------------- ---------------
+
+##### assignment operators
+ Operator Description                                                                                            Example
+ -------- ------------------------------------------------------------------------------------------------------ ----------------- 
+|=        Assigns value of right operand to left operand                                                         C = A+B|
+|+=       Adds the value of right operand to left operand and assigns the final value to the left operand        C+=A is same as C=C+A|
+|-=       Subtracts the value of right operand from left operand and assigns the final value to the left operand C-=A is same as C=C-A|
+|*=       Multiplies the value right operand to left operand and assigns the final value to the left operand     C&ast;=A is same as C=C&ast;A|
+|/=       Divides the value of left operand from right operand and assigns the final value to the left operand   C/=A is same as C=C/A|
+|%=       Takes modulus using two operands and assigns the result to the left operand                            C%=A is same as C=C%A|
+ -------- ----------------------------------------------------------------------------------------------------- ----------------
+
+##### increment and decrement operators
+- __++__ operator increments by 1 the value of an integer var
+- __--__ operator decerements by 1 the value of an integer var
+both these operator can be used as a __prefix__ or as a __postfix__, the only difference between these 2  is that:
+	- prefix returns the var value __after__ increment/decrement (a=8; a++ returns 8)
+	- postfix returns the var value __before__ increment/decrement (a=8; ++a returns 9)
+
 ```c
-// Ex.1
 #include <iostream>
-int main(){
-	typedef unsigned int ui;	// giving the "unsigned int" data type the alias "ui"
-	ui i = 5, j = 8;		// defining unsigned integers like "ui"
-	std::cout << "i = " << i << std::endl;
-	std::cout << "j = " << j << std::endl;
+int main() {
+	using namespace std;
+	int a=8, b=8, c=8, d=8;
+	cout << "a++ = " << a++ << endl; // 8
+	cout << "++b = " << ++b << endl; // 9
+	cout << "c-- = " << c-- << endl; // 8
+	cout << "--d = " << --d << endl; // 7
 	return 0;
 }
-
-// Ex.2
+```
+##### sizeof() operator
+Returns the size of a variable (size of the data type definition)
+```c
 #include <iostream>
-#include <cstring>
-using namespace std;
-typedef struct student {	// giving the struct "student" the alias "st"
-  	int roll_no;
-  	char name[30];
-  	int phone_number;
-} st;
+int main() {
+	using namespace std;
+	int i = 6;
+	int j;
+	char c;
+	float f;
+	double d;
+	cout << "size of integer variable i : " << sizeof(i) << endl; // 4
+	cout << "size of integer variable j : " << sizeof(j) << endl; // 4
+	cout << "size of character variable c : " << sizeof(c) << endl; // 1
+	cout << "size of float variable f : " << sizeof(f) << endl; // 4
+	cout << "size of double variable d : " << sizeof(d) << endl; // 8
+	return 0;
+}
+```
+
+### Conditional Operators
+All conditional operators in C++ are identical to Java.
+
+##### if, else, else if
+```c
+// Ex.
+#include <iostream>
+int main() {
+    using namespace std;
+    char grade = 'A';
+    if( grade == 'A' ){
+      cout << "Excellent !" << endl;
+    }
+    else if(grade == 'B'){
+      cout << "Outstanding !" << endl;
+    }
+    else if(grade == 'C'){
+      cout << "Good !" << endl;
+    }
+    else if(grade == 'D'){
+      cout << "Can do better" << endl;
+    }
+    else if(grade == 'E'){
+      cout << "Just passed" << endl;
+    }
+    else if(grade == 'F'){
+      cout << "You failed" << endl;
+    }
+    else{
+      cout << "Invalid grade" << endl;
+    }
+    return 0;
+}
+```
+
+##### ternary operator
+```c
+condition ? expression1 : expression2;
+
+// Ex:
+#include <iostream>
 int main(){
-	st p1;	// using the alias for student
-	p1.roll_no = 1; 
-  	cout << "roll no : " << p1.roll_no << endl;
+	using namespace std;
+	int age;
+	cout << "Enter age" << endl;
+	cin >> age;
+	(age > 18) ? cout << "eligible to vote" : cout << "not eligible to vote";
+	return 0;
+}
+```
+
+##### switch case
+Switching is permitted on basic data types like char, int, etc:
+```c
+switch(expression) {
+    case constant1:
+        statement(s);
+        break;
+    case constant2:
+        statement(s);
+        break;
+	/* you can give any number of cases */
+    default:
+        statement(s);
+}
+
+// Ex.
+#include <iostream>
+int main() {
+	using namespace std;
+	char grade = 'B';
+  	switch ( grade ) {
+		case 'A':
+      		cout << " Excellent ! " << endl;
+    		 break ;
+    	case 'B':
+    		 cout << " Outstanding ! " << endl;
+      		break ;
+    	case 'C':
+      		cout << " Good ! " << endl;
+      		break ;
+    	case 'D':
+      		cout << " Can do better " << endl;
+      		break ;
+    	case 'E':
+      		cout << " Just passed " << endl;
+      		break ;
+    	case 'F':
+      		cout << " You failed " << endl;
+      		break ;
+    	default :
+      		cout << " Invalid grade " << endl;
+  	}
+	return 0;
+}
+```
+_note: No need to write break in default case because it automatically terminates once default statements are executed._ 
+
+### Loops
+All loops in C++ are identical to Java. Also __break _(jump out of the loop)___ and __continue _(jump to the next iteration)___ statements are the same.
+
+##### while
+```c
+while(condition) {
+    statement(s)
+}
+
+// Ex.
+#include <iostream>
+int main() {
+    using namespace std;
+    int n = 1;
+    while( n <= 10){
+        cout << n << endl;
+        n++;
+    }
+    return 0;
+}
+```
+
+##### for
+```c
+for(initialization; condition; propagation) {
+    statement(s)
+}
+
+// Ex:
+#include <iostream>
+int main() {
+	using namespace std;
+	int n;
+	for( n = 1; n <= 10; n++ ) {
+		cout << n << endl;
+	}
+	return 0;
+}
+```
+
+##### do while
+```c
+do {
+    statement(s)
+} while( condition );
+
+// Ex.
+#include <iostream>
+int main() {
+    using namespace std;
+    int n = 1;
+    do {
+    	cout << n << endl;
+      	n++;
+    } while( n <= 10 );
+    return 0;
+}
+```
+##### For-each
+In C++ is used to iterate over arrays .
+```c
+#include <iostream>
+ 
+int main() {
+	using namespace std;
+	int ar[] = { 1,2,3,4,5,6,7,8,9,10 };
+	for (int m : ar) { // element data type matches with array data type
+		cout << m << endl;	// prints single array elements
+	}
 	return 0;
 }
 ```
@@ -198,7 +550,7 @@ An uninitialized variable is the one to which we have not assigned any value. Un
 	- __bool__ variables are filled with literals 'true' or 'false' but they evaluate to 0 or 1.
 	- __char__ variables are assigned using 'x' literals and are internally managed with the respective 8bit ASCII code [using the _int(ch)_ function, you can get the ASCII code of ch]
 
-### Left/Right Values and Literals
+### Left and Right Values and Literals
 A C++ assignment is identified by the following members
 ```c
 leftValue = rightValue
@@ -206,7 +558,6 @@ leftValue = rightValue
 - __leftValue__ is a value which has an address and is usually a variable. 
 - __rightValue__ is the value assigned to the leftValue and can be either a variable, a function or a literal.
 Here is an example of assignments using literals for various data types:
-
 ```c
 #include <iostream>
 int main() {
@@ -216,7 +567,6 @@ int main() {
 	double d;   //declaring double variable
 	char c;     //declaring character variable
 	bool b, bl;     //decaring boolean variable;
-	
 	//assigning values to these variables
 	i = 45;
 	f = 34.234;
@@ -224,7 +574,6 @@ int main() {
 	c = 'g'; // char are assigned with single quotes
 	b = true;
 	bl = 5 < 4;
-	
 	cout << "int : " << i << endl; // prints 45
 	cout << "float : " << f << endl; // prints 34.234
 	cout << "double : " << d << endl; // prints 34.43242343
@@ -284,6 +633,7 @@ int main(){
 	return 0;
 }
 ```
+_note: to make a global var defined in one file usable in another file it needs to be declared as __extern__ (see [storage classes](#storage-classes))_
 
 ### Storage Classes
 Underneath the compiler stores some information about variables (scope, lifetime, etc) in special classes called storage classes. Each storage class is identified by a keyword:
@@ -307,10 +657,10 @@ Underneath the compiler stores some information about variables (scope, lifetime
 - __register__: when declaring a var using the register keyword, the var itself will not be stored in computer memory (RAM) as usual, but it will be stored in a register. The usage of this keyword depends on the hw the program is running on.
 - __mutable__: see const objects.
 
-# Constants
+# CONSTANTS
 Constants are elements whose __value is assigned at time of declaration and can never change__ later throughout the program. __Constants elemts are identified by the _const_ keyword__, that can be applied to different elements.
 
-##### Const Variables
+### Constant Variables
 Cannot change once declared
 ```c
 int main() {
@@ -319,7 +669,7 @@ int main() {
     return 0;
 }
 ```
-##### Constants in Functions
+### Constants in Functions
 Functions can have:
 - __const arguments__: function arguments cannot be changed once passed in
 	```c
@@ -334,7 +684,7 @@ Functions can have:
 	}
 	```
 
-##### Constants in Classes
+### Constants in Classes
 Classes can have:
 - __const data members__: declared constant without value, initialized in constructor
 	```c
@@ -384,276 +734,17 @@ Classes can have:
 	```
 	_note: as an exception, a data member of a const object still can change if declared __mutable__ in the object class._
 
-##### Const Pointers
+### Const Pointers
 Once declared will always point to the same address (value in the address still can change obviously)
 ```c
 int a = 4;
 int* const p = &a;   // const pointer p pointing to the variable a
 ```
 
-##### Pointer to Const Variable
+### Pointer to Const Variable
 Simply a pointer to a constant variable (different from constant pointer, check syntax):
 ```c
 const int* p;	// const pointer p pointing to a const int variable
-```
-
-# OPERATORS
-
-### Arithmetic Operators
-Perform arithmetic operations and return result.<br>
-_assuming a=8 and b=4_
-
-|Operator|Description|Example|
-|--------|-----------|-------|
-|+       |Adds operands                      |a+b=12|
-|-	     |Subtracts second operand from first|a-b=4|
-|&ast;	 |Multiplies both operands           |a*b=32|
-|/	     |Divides numerator by denominator   |a/b=2|
-|%	     |Modulus Operator returns the remainder of an integer division|a%b=0|
-
-### Relational Operators
-Check the relationship between two operands and return 1 if the relationship is true and 0 if it is false.<br>
-_assuming a=8 and b=4_
-
-|Operator|Description             |Example          |
-|--------|------------------------|-----------------|
-|==	     |Equal to	              |(a == b) is false|
-|!=	     |Not equal to            |(a != b) is true |
-|>	     |Greater than            |(a > b) is true  |
-|<	     |Less than               |(a < b) is false |
-|>=	     |Greater than or equal to|(a >= b) is true |
-|<=	     |Less than or equal to   |(a <= b) is false|
-
-### Logical Operators
-Perform logical operations and return 1 if the relationship is true and 0 if it is false.<br>
-_assuming a=1 and b=0_
-
-|Operator|Description                                                              |Example        |
-|--------|-------------------------------------------------------------------------|---------------|
-|&&|Logical AND. If both the operands are non-zero, then the condition becomes true|a&&b is 0|
-|&#124;&#124;|Logical OR. If any one or both the operands are non-zero, then the condition becomes true|a&#124;&#124;b is 1|
-|!|Logical NOT. It is used to reverse the condition. So, if a condition is true, ! makes it false and vice versa.|!a is 0|
- -------- ------------------------------------------------------------------------- ---------------
-
-### Assignment Operators
- Operator Description                                                                                            Example
- -------- ------------------------------------------------------------------------------------------------------ ----------------- 
-|=        Assigns value of right operand to left operand                                                         C = A+B|
-|+=       Adds the value of right operand to left operand and assigns the final value to the left operand        C+=A is same as C=C+A|
-|-=       Subtracts the value of right operand from left operand and assigns the final value to the left operand C-=A is same as C=C-A|
-|*=       Multiplies the value right operand to left operand and assigns the final value to the left operand     C&ast;=A is same as C=C&ast;A|
-|/=       Divides the value of left operand from right operand and assigns the final value to the left operand   C/=A is same as C=C/A|
-|%=       Takes modulus using two operands and assigns the result to the left operand                            C%=A is same as C=C%A|
- -------- ----------------------------------------------------------------------------------------------------- ----------------
-
-### Increment and Decrement Operators
-- __++__ operator increments by 1 the value of an integer var
-- __--__ operator decerements by 1 the value of an integer var
-both these operator can be used as a __prefix__ or as a __postfix__, the only difference between these 2  is that:
-	- prefix returns the var value __after__ increment/decrement (a=8; a++ returns 8)
-	- postfix returns the var value __before__ increment/decrement (a=8; ++a returns 9)
-
-```c
-#include <iostream>
-int main() {
-	using namespace std;
-	int a=8, b=8, c=8, d=8;
-	cout << "a++ = " << a++ << endl; // 8
-	cout << "++b = " << ++b << endl; // 9
-	cout << "c-- = " << c-- << endl; // 8
-	cout << "--d = " << --d << endl; // 7
-	return 0;
-}
-```
-### sizeof() operator
-Returns the size of a variable (size of the data type definition)
-```c
-#include <iostream>
-int main() {
-	using namespace std;
-	int i = 6;
-	int j;
-	char c;
-	float f;
-	double d;
-	cout << "size of integer variable i : " << sizeof(i) << endl; // 4
-	cout << "size of integer variable j : " << sizeof(j) << endl; // 4
-	cout << "size of character variable c : " << sizeof(c) << endl; // 1
-	cout << "size of float variable f : " << sizeof(f) << endl; // 4
-	cout << "size of double variable d : " << sizeof(d) << endl; // 8
-	return 0;
-}
-```
-
-# CONDITIONAL OPERATORS
-All conditional operators in C++ are identical to Java.
-
-### if, else, else if
-```c
-// Ex.
-#include <iostream>
-int main() {
-    using namespace std;
-    char grade = 'A';
-    if( grade == 'A' ){
-      cout << "Excellent !" << endl;
-    }
-    else if(grade == 'B'){
-      cout << "Outstanding !" << endl;
-    }
-    else if(grade == 'C'){
-      cout << "Good !" << endl;
-    }
-    else if(grade == 'D'){
-      cout << "Can do better" << endl;
-    }
-    else if(grade == 'E'){
-      cout << "Just passed" << endl;
-    }
-    else if(grade == 'F'){
-      cout << "You failed" << endl;
-    }
-    else{
-      cout << "Invalid grade" << endl;
-    }
-    return 0;
-}
-```
-
-### ternary operator
-```c
-condition ? expression1 : expression2;
-
-// Ex:
-#include <iostream>
-int main(){
-	using namespace std;
-	int age;
-	cout << "Enter age" << endl;
-	cin >> age;
-	(age > 18) ? cout << "eligible to vote" : cout << "not eligible to vote";
-	return 0;
-}
-```
-
-### switch case
-Switching is permitted on basic data types like char, int, etc:
-```c
-switch(expression) {
-    case constant1:
-        statement(s);
-        break;
-    case constant2:
-        statement(s);
-        break;
-	/* you can give any number of cases */
-    default:
-        statement(s);
-}
-
-// Ex.
-#include <iostream>
-int main() {
-	using namespace std;
-	char grade = 'B';
-  	switch ( grade ) {
-		case 'A':
-      		cout << " Excellent ! " << endl;
-    		 break ;
-    	case 'B':
-    		 cout << " Outstanding ! " << endl;
-      		break ;
-    	case 'C':
-      		cout << " Good ! " << endl;
-      		break ;
-    	case 'D':
-      		cout << " Can do better " << endl;
-      		break ;
-    	case 'E':
-      		cout << " Just passed " << endl;
-      		break ;
-    	case 'F':
-      		cout << " You failed " << endl;
-      		break ;
-    	default :
-      		cout << " Invalid grade " << endl;
-  	}
-	return 0;
-}
-```
-_note: No need to write break in default case because it automatically terminates once default statements are executed._ 
-
-# LOOPS
-All loops in C++ are identical to Java. Also __break _(jump out of the loop)___ and __continue _(jump to the next iteration)___ statements are the same.
-
-### while
-```c
-while(condition) {
-    statement(s)
-}
-
-// Ex.
-#include <iostream>
-int main() {
-    using namespace std;
-    int n = 1;
-    while( n <= 10){
-        cout << n << endl;
-        n++;
-    }
-    return 0;
-}
-```
-
-### for
-```c
-for(initialization; condition; propagation) {
-    statement(s)
-}
-
-// Ex:
-#include <iostream>
-int main() {
-	using namespace std;
-	int n;
-	for( n = 1; n <= 10; n++ ) {
-		cout << n << endl;
-	}
-	return 0;
-}
-```
-
-### do while
-```c
-do {
-    statement(s)
-} while( condition );
-
-// Ex.
-#include <iostream>
-int main() {
-    using namespace std;
-    int n = 1;
-    do {
-    	cout << n << endl;
-      	n++;
-    } while( n <= 10 );
-    return 0;
-}
-```
-### For-each
-In C++ is used to iterate over arrays .
-```c
-#include <iostream>
- 
-int main() {
-	using namespace std;
-	int ar[] = { 1,2,3,4,5,6,7,8,9,10 };
-	for (int m : ar) { // element data type matches with array data type
-		cout << m << endl;	// prints single array elements
-	}
-	return 0;
-}
 ```
 
 # FUNCTIONS
@@ -678,7 +769,7 @@ function_name ( parameters ) ;
 // Ex
 average( num1, num2 );
 ```
-### function scope
+### Function Scope
 In order to properly call a function, it must be defined __before__ the point where I am making the call.
 So assuming we want to call a "sayHello" function from our main function we have several ways to do it:
 - Define and implement the function before calling it:
@@ -840,7 +931,9 @@ Note that to properly call by reference:
 - The called function exposes __*a__ pointer args
 - The called function works on whole __*a__ parameters in order to modify actual values
 
-# ARRAYS
+# STORAGE DATA-STRUCTURES
+
+### Arrays
 ```c
 datatype array_name [array_size];
 ```
@@ -849,7 +942,7 @@ datatype array_name [array_size];
 - Array allocates contiguous memory, this means that the memories of all elements of an array are allocated together and are continuous.
 - Arrays length is specified at the time of declaration and remains constant till compile time.
 
-### Declaration and Initialization
+##### declaration and initialization
 Compiler needs to know the size of the array in order to reserve the necessary memory locations when declaring it. Initialization can be done 2 ways:
 1. Size explicitly declared
 ```c
@@ -862,6 +955,7 @@ n[2] = 8;
 ```c
 int n[ ]={ 2,4,8 };
 ```
+
 ### Pointers to Array
 When an array name is used as an expression, it refers to a pointer to the first element, not the entire array. So to create a pointer to an array you can write:
 ```c
@@ -877,14 +971,12 @@ ptr = &num; // Requires & to give the memory address to the ptr
 ```
 note that __&ast;p__, __&ast;(p+1)__, __&ast;(p+2)__, ... give access to the array __element values__.
 
-### Passing an array to a function
+##### passing an array to a function
 Entire arrays cannot be passed to functions, but what we do is passing the array name. Actually the array name is the address of the 
 first element of the array itself and that is in fact a reference to the array. So de facto arrays gets always passed by reference.
 ```c
 #include <iostream>
-
 using namespace std;
-
 void modifyArrayByReference(int array[], int size) {
 	int tmpCopy[size];
 	for (int i=0; i<size; i++) {
@@ -894,7 +986,6 @@ void modifyArrayByReference(int array[], int size) {
 		array[j] = tmpCopy[size-j-1];	// -1 skips array terminator
 	}
 }
-
 int main() {
 	int size;
 	cout << "Enter a size for your int array" << endl;
@@ -921,9 +1012,7 @@ int main() {
 The same can be done using a pointer:
 ```c
 #include <iostream> 
-
 using namespace std;
-
 void display(int *p) {
     int i;
     for(i=0;i<8;++i) {
@@ -931,7 +1020,6 @@ void display(int *p) {
         p++;	// *p is n[0], *(p+1) is n[1] and so on
     }
 }
-
 int main() {
     int size,j; 
     int n[ ] = { 1, 2, 3, 4, 5, 6, 7, 8 }; 
@@ -942,11 +1030,11 @@ int main() {
 - Caller passes array name
 - Called function exposes a pointer
 
-### C-style arrays
+##### C-style arrays
 Remember that the basic C++ array is a C style array, so it is a very low level object with no facility functions at all (not even size, add, remove etc)<br>
 There are other kinds of array that expose some high level functions like size, iterators, utility methods like for instance std::array contained into std lib.
 
-# VECTORS
+### Vectors
 Vectors are just arrays whose length changes dynamically according to the requirements. So opposite to arrays, for vectors there's no need to specify the length while declaring the vector, just add or remove items from it and the length will change accordingly.
 
 The most common template for vectors is the one from std lib, that also offers many utility functions for size, ordering, adding deleting. For using std::vector, we need to include the <vector> header in our program.:
@@ -955,11 +1043,9 @@ std::vector<datatype> array_name;
 
 // Ex.
 #include <vector>
-
 std::vector<int> numbers;
 ```
-
-# STRINGS
+### Strings
 Strings is simply an array of chars. String literals are always wrapped in double quotes __"my string"__ and the last element of the array is __"\0"__ that corresponds to the __string terminator__ (ASCII value of '\0' is '0').<br>
 Declaring a string like:
 ```c
@@ -971,15 +1057,13 @@ will result in the following array
 |-|-|-|--|
 |_0_|_1_|_2_|_3_ |
 
-### Taking string inputs and printing them
+##### taking string inputs and printing them
 1. Single-word input
 ```c
 #include <iostream>
 int main() {
 	using namespace std;
-	
 	char name[20];       //declaring string 'name'
-	
 	cin >> name; //taking string input like 'Alessio'
 	cout << name << endl; //prints 'Alessio'
 	return 0;
@@ -990,27 +1074,22 @@ int main() {
 #include <iostream>
 int main() {
 	using namespace std;
-	
 	char name[20];       //declaring string 'name'
-	
 	cin.getline(name, sizeof(name)); //taking string input like 'Alessio Matteo'
 	cout << name << endl; //prints 'Alessio Matteo'
 	return 0;
 }
 ```
 
-### Passing Strings to Functions
+##### passing strings to functions
 Passing a string to a function is the same as passing an array (still a pass by reference):
 ```c
 // Ex.
 #include <iostream>
-
 using namespace std;
-
 void display( char ch[] ) {
 	cout << ch;
 }
-
 int main() {
 	char arr[30];
 	cout << "Enter a word" << endl;
@@ -1019,7 +1098,7 @@ int main() {
 	return 0;
 }
 ```
-### C-style Strings
+##### C-style strings
 As already said, basic C++ strings are simple arrays and like array are very low level objects. 
 The _string_ template from the standard library (_std::string_) can  be used in order to have more facilities, 
 anyway the library __cstring__ exposes some basic utility functions on C-style strings too, here is the list:
@@ -1041,9 +1120,7 @@ Here is an example of usage of the __cstring__ library:
 ```c
 #include <iostream>
 #include <cstring>
-
 using namespace std;
-
 int main(){
 	char s2[ ]= "Hello"; 
   	char s1[10]; 
@@ -1054,13 +1131,7 @@ int main(){
 }
 ```
 
-# PRE-PROCESSOR
-C++ programs are pre-processed before being executed. The pre-processor simply replaces all pre-processor directives with the corresponding code. __All directives starting with a # symbol are pre-processor directives__.<br>
-Most common pre-processor directives are:
-- __#include__: inclusions are replaced by pre-processor before execution making header files available in our program.
-- __#define__: is used to define _constant values_ or _macros_ that will be available globally in the program. Pre-processor replaces the objects using #define around the program with their value, or macro code, before execution. 
-
-# STRUCTURES
+### Structures
 While array are used to collect similar data types, __a structure is a collection of dissimilar data types__.<br>
 The syntax for structure is:
 ```c
@@ -1113,7 +1184,7 @@ Note that:
 - __Structures can be copied__ in one go (__p3=p1__).
 - A collection of similar structures can be put into an __array of structures__ if needed (__struct student stud[5];__).
 
-### Passing structures to function
+##### passing structures to functions
 __1. Pass by value__ (passing a copy of the struct):
 ```c
 #include <iostream>
@@ -1183,7 +1254,7 @@ int main(){
 }
 ```
 
-# UNIONS
+### Unions
 Unions are formally exactly the same as structures:
 ```c
 union unionName {	// union syntax, same as struct but with union keyword
@@ -1234,7 +1305,67 @@ int main() {
 	return 0;
 }
 ```
- 
+
+### ENUMS
+An enumeration is a user-defined datatype that consists of a group of constant values. __Enum values in C++ can only be integers__, if no value is specified for an element, then an automatic value is assigned (automatic values goes like 0,1,2,etc from first to last element).
+```c
+enum enum_name {
+    element1,	// no int is assigned, element value will be 0
+    element2,	// no int is assigned, element value will be 1
+    element3	// no int is assigned, element value will be 2
+};
+
+// Ex.
+#include <iostream>
+enum Season {
+	Summer = 10,
+	Spring = 15,
+	Winter = 20,
+	Autumn = 25
+};
+int main() {
+	enum Season w;	// enum declaration
+	w = Winter;	// enum initialization
+	std::cout << w;	// prints 20
+	return 0;
+}
+```
+
+##### enum classes
+Due to the fact that enums are simple integer values, and to avoid confusion between different enums whose elements share the same values, enums can be put into a scope using __class enums__
+```c
+enum class enum_name {
+    element1,	// no int is assigned, element value will be 0
+    element2,	// no int is assigned, element value will be 1
+    element3	// no int is assigned, element value will be 2
+};
+
+// Ex.
+#include <iostream>
+enum class Season { 
+    Summer, 
+    Spring, 
+    Winter, 
+    Autumn
+};
+enum class Color {
+    Blue,
+    Pink,
+    Green
+};
+int main() {
+    Season s = Season::Summer;	// syntax to access a scoped enum
+    Color c = Color::Blue;	// syntax to access a scoped enum
+    if( s == c ) {
+    	std::cout << "Equal" << std::endl;
+    }
+    else {
+    	std::cout << "Not Equal" << std::endl;	// even if Summer and Blue have both value 0, "Not Equal" gets printed thanks to the use of enum classes
+    }
+    return 0;
+}
+```
+
 # OOP in C++
 C++, opposite to C, supports __Object Oriented Programming__.
 
@@ -1666,62 +1797,12 @@ int main() {
 }
 ```
 
-# FILE I/O
-To deal with files input and output streams, the _fstream_ C++ standard library comes in handy.<br>
-The lib exposes the following _data types_:
-
-|Data type|Description|
-|---------|--------------------------------------------------------------------|
-|ofstream|It is used to create files and write on files.|
-|ifstream|It is used to read from files.|
-|fstream|It can perform the function of both ofstream and ifstream which means it can create files, write on files, and read from files.|
-
-And the following _modes_ that can be used to specify the purpose we're opening the file for:
-
-|Mode|Description|
-|---------|--------------------------------------------------------------------|
-|ios::app|opens a text file for appending. (appending means to add text at the end).|
-|ios::ate|opens a file for output and move the read/write control to the end of the file.|
-|ios::in|opens a text file for reading.|
-|ios::out|opens a text file for writing.|
-|ios::trunc|truncates the content before opening a file, if file exists.|
-
-Here is a complete example of reading and writing on a file:
-```c
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
-int main(){
-
-  char text[200];
-
-  fstream file;
-  file.open ("example.txt", ios::out | ios::in );	// opening file in read and write mode
-
-  cout << "Write text to be written on file." << endl;
-  cin.getline(text, sizeof(text));	// acquiring text from user
-
-  // Writing on file
-  file << text << endl;	// writing text to file using << operator
-
-  // Reding from file
-  file >> text;		// reading from file using >> operator
-  cout << text << endl;
-
-  //closing the file
-  file.close();		// always close opened files 
-  return 0;
-}
-```
-
 # DYNAMIC MEMORY ALLOCATION
 Memory is divided in 2 main parts used differently by C++ programs:
 - __stack__: memory from the stack is used by all the members which are declared inside functions. Note that main is also a function and this __is the normal memory used for most elements of C++ programs__.
 - __heap__: memory from the heap is __commonly unused__ and __can be used to dynamically allocate the memory at runtime__, using __new__ and __delete__ operators.
 
-### _new_ and _delete_ operators
+### new and delete operators
 In C _malloc_ and _free_ operators are used to reserve and cleanup a given block of memory. In C++ these legacy operators are still supported, but it's reccomended ti use their respective C++ counterparts for dynamic memory allocation:
 - __new__ : reserves a contiguous memory block that is always accessible throughout the program (unlike the automatic memory which is available only inside the function or block where it's declared).<br>
 This is the way of dynamically allocating a variable _data_:
@@ -1787,67 +1868,6 @@ int main() {
 ```
 _note: the same can be done with array of objects using the dynamic array allocation syntax_
 
-
-# ENUMS
-An enumeration is a user-defined datatype that consists of a group of constant values. __Enum values in C++ can only be integers__, if no value is specified for an element, then an automatic value is assigned (automatic values goes like 0,1,2,etc from first to last element).
-```c
-enum enum_name {
-    element1,	// no int is assigned, element value will be 0
-    element2,	// no int is assigned, element value will be 1
-    element3	// no int is assigned, element value will be 2
-};
-
-// Ex.
-#include <iostream>
-enum Season {
-	Summer = 10,
-	Spring = 15,
-	Winter = 20,
-	Autumn = 25
-};
-int main() {
-	enum Season w;	// enum declaration
-	w = Winter;	// enum initialization
-	std::cout << w;	// prints 20
-	return 0;
-}
-```
-
-##### enum classes
-Due to the fact that enums are simple integer values, and to avoid confusion between different enums whose elements share the same values, enums can be put into a scope using __class enums__
-```c
-enum class enum_name {
-    element1,	// no int is assigned, element value will be 0
-    element2,	// no int is assigned, element value will be 1
-    element3	// no int is assigned, element value will be 2
-};
-
-// Ex.
-#include <iostream>
-enum class Season { 
-    Summer, 
-    Spring, 
-    Winter, 
-    Autumn
-};
-enum class Color {
-    Blue,
-    Pink,
-    Green
-};
-int main() {
-    Season s = Season::Summer;	// syntax to access a scoped enum
-    Color c = Color::Blue;	// syntax to access a scoped enum
-    if( s == c ) {
-    	std::cout << "Equal" << std::endl;
-    }
-    else {
-    	std::cout << "Not Equal" << std::endl;	// even if Summer and Blue have both value 0, "Not Equal" gets printed thanks to the use of enum classes
-    }
-    return 0;
-}
-```
-
 # TEMPLATES
 In C++ templates are the instrument used for _generic programming_ or in other words programming independently from data types (similar to Java generics).<br>
 ##### Template Functions
@@ -1907,66 +1927,44 @@ int main() {
 }
 ```
 
----
+# FILE IO
+To deal with files input and output streams, the _fstream_ C++ standard library comes in handy.<br>
+The lib exposes the following _data types_:
 
-_References:_<br>
-- [codesdope C++ tutorial](https://www.codesdope.com/cpp-introduction/)
-	- Tutorials covered:<br>
-		- [x] Introduction
-		- [x] Let's start
-		- [x] Gear up
-		- [x] Variables and literals
-		- [x] Operators
-		- [x] Decide if/else
-		- [x] Loops
-		- [x] Controlling loop
-		- [x] Function
-		- [x] Inline function
-		- [x] Scope of variables
-		- [x] Pointers
-		- [x] Array
-		- [x] Std::array
-		- [x] Std::vector
-		- [x] String
-		- [x] Std::string
-		- [x] Pre-processor
-		- [x] Structure
-		- [x] OOP
-		- [x] Classes and objects
-		- [x] Destructors
-		- [x] Initialization list
-		- [x] Subclass
-		- [x] Constructor overloading
-		- [x] Array of objects
-		- [x] More about functions
-		- [x] Multiple inheritance
-		- [x] Virtual and abstract
-		- [x] Encapsulation
-		- [x] Friend class and function
-		- [x] File i/o
-		- [x] Templates
-		- [x] Const keyword
-		- [x] Dynamic memory
-		- [x] Enum
-		- [x] Enum class
-		- [x] Union
-		- [x] typedef
-		- [x] Storage classes
-- [codesdope C++ practice](https://www.codesdope.com/practice/practice_cpp/)
-	- Practice covered:<br>
-		- [x] Let's start
-		- [x] Variables
-		- [x] Operators
-		- [x] Decide if/else
-		- [x] Loops
-		- [x] Functions ?
-		- [x] Pointers ?
-		- [x] Array
-		- [x] String ?
-		- [x] Pre-processor
-		- [ ] Structure
-		- [ ] Classes, objects
-		- [ ] Subclass
-		- [ ] Array of objects
-		- [ ] Overloading
-		- [ ] Multi. inheritance
+|Data type|Description|
+|---------|--------------------------------------------------------------------|
+|ofstream|It is used to create files and write on files.|
+|ifstream|It is used to read from files.|
+|fstream|It can perform the function of both ofstream and ifstream which means it can create files, write on files, and read from files.|
+
+And the following _modes_ that can be used to specify the purpose we're opening the file for:
+
+|Mode|Description|
+|---------|--------------------------------------------------------------------|
+|ios::app|opens a text file for appending. (appending means to add text at the end).|
+|ios::ate|opens a file for output and move the read/write control to the end of the file.|
+|ios::in|opens a text file for reading.|
+|ios::out|opens a text file for writing.|
+|ios::trunc|truncates the content before opening a file, if file exists.|
+
+Here is a complete example of reading and writing on a file:
+```c
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main(){
+  char text[200];
+  fstream file;
+  file.open ("example.txt", ios::out | ios::in );	// opening file in read and write mode
+  cout << "Write text to be written on file." << endl;
+  cin.getline(text, sizeof(text));	// acquiring text from user
+  // Writing on file
+  file << text << endl;	// writing text to file using << operator
+  // Reding from file
+  file >> text;		// reading from file using >> operator
+  cout << text << endl;
+  //closing the file
+  file.close();		// always close opened files 
+  return 0;
+}
+```

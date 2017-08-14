@@ -1,0 +1,60 @@
+- [codesdope C++ tutorial](https://www.codesdope.com/cpp-introduction/)
+	- Tutorials covered:<br>
+		- [x] Introduction
+		- [x] Let's start
+		- [x] Gear up
+		- [x] Variables and literals
+		- [x] Operators
+		- [x] Decide if/else
+		- [x] Loops
+		- [x] Controlling loop
+		- [x] Function
+		- [x] Inline function
+		- [x] Scope of variables
+		- [x] Pointers
+		- [x] Array
+		- [x] Std::array
+		- [x] Std::vector
+		- [x] String
+		- [x] Std::string
+		- [x] Pre-processor
+		- [x] Structure
+		- [x] OOP
+		- [x] Classes and objects
+		- [x] Destructors
+		- [x] Initialization list
+		- [x] Subclass
+		- [x] Constructor overloading
+		- [x] Array of objects
+		- [x] More about functions
+		- [x] Multiple inheritance
+		- [x] Virtual and abstract
+		- [x] Encapsulation
+		- [x] Friend class and function
+		- [x] File i/o
+		- [x] Templates
+		- [x] Const keyword
+		- [x] Dynamic memory
+		- [x] Enum
+		- [x] Enum class
+		- [x] Union
+		- [x] typedef
+		- [x] Storage classes
+- [codesdope C++ practice](https://www.codesdope.com/practice/practice_cpp/)
+	- Practice covered:<br>
+		- [x] Let's start
+		- [x] Variables
+		- [x] Operators
+		- [x] Decide if/else
+		- [x] Loops
+		- [x] Functions ?
+		- [x] Pointers ?
+		- [x] Array
+		- [x] String ?
+		- [x] Pre-processor
+		- [ ] Structure
+		- [ ] Classes, objects
+		- [ ] Subclass
+		- [ ] Array of objects
+		- [ ] Overloading
+		- [ ] Multi. inheritance
