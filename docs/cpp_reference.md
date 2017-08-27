@@ -599,11 +599,11 @@ Variables can either be:
 	```c
 	#include <iostream>
 	using namespace std;
-	
+
 	int multiply(int a, int b){	// a and b are copies of x,y, so x,y won't get modified
 	        return a * b;
 	}
-	
+
 	int main() {
 	        int x = 3, y = 5, z;	// local vars
 	        z = multiply( x, y );	// normally calling function passing by value
@@ -614,16 +614,16 @@ Variables can either be:
 - __global__: can be accessed by any function in the program.
 	```c
 	#include <iostream>
-	
+
 	using namespace std;
-	
+
 	int g = 10;	// global var
-	
+
 	void func1(){
 		g = 20;	// actually modifying the global var g
 		cout << g << endl;
 	}
-	
+
 	int main(){
 		func1();
 		g = 30;	// actually modifying the global var g
@@ -774,11 +774,11 @@ So assuming we want to call a "sayHello" function from our main function we have
 	```c
 	#include <iostream>
 	using namespace std;
-	
+
 	void sayHello() { // declaring sayHello function
 	    cout << "Hello!" << endl; // implementing sayHello function
 	}
-	
+
 	int main(){
 		sayHello();
 		return 0;
@@ -800,7 +800,7 @@ So assuming we want to call a "sayHello" function from our main function we have
 - Implement the function in a dedicated Class (.cpp) and declare it in the related header (.h), then simply include the header in the main() file
 	```c
 	#include <Hello.h>
-	
+
 	int main(){
 		Hello hello;
 		hello.sayHello();
@@ -881,16 +881,16 @@ int main(){
 	```c
 	// Ex:
 	#include <iostream>
-	
+
 	using namespace std;
-	
+
 	void swap( int a, int b ) {
 		int t;
 		t = a;
 		a = b;
 		b = t;
 	}
-	
+
 	int main(){
 		int num1 = 1, num2 = 2;
 		swap( num1, num2);
@@ -905,7 +905,7 @@ int main(){
 	// Ex of call by reference using POINTERS
 	#include <iostream>
 	using namespace std;
-	
+
 	// function using pointers
 	void swapWithPointers( int *a, int *b ) {
 		int t;
@@ -920,7 +920,7 @@ int main(){
 		a = b;
 		b = t;
 	}
-	
+
 	int main(){
 		int num1 = 1, num2 = 2;
 		swapWithPointers( &num1, &num2);	// call by reference with pointers
@@ -932,7 +932,7 @@ int main(){
 		return 0;
 	}
 	```
-	
+
 	1. __Using Pointers__:
 		- The caller passes var addresses __&num1__
 		- The called function exposes __*a__ pointer args
@@ -941,7 +941,7 @@ int main(){
 		- The caller passes var value __num1__
 		- The called function exposes __&a__ reference args
 		- The called function works on simple __a__ parameters in order to modify actual values
-	
+
 _Note: one of the main differences between using pointers or references in call by reference, is that, unlike pointers, references cannot be null. Anyway a reference can still be invalid, so using references is not necessarily safer than using pointers._
 
 # STORAGE DATA-STRUCTURES
@@ -1807,9 +1807,7 @@ This is the way of dynamically allocating a variable _data_:
 	```c
 	int *data = new int;	// dynamic allocation of a variable
 	```
-	_note that we use pointers to allocate memory dynamically._<br>
-	This simple dynamic var declaration will allocate in memory the space of an integer for our var.
-
+	This simple dynamic var declaration will allocate in memory the space of an integer for our var. Note that __dynamic memory allocation uses pointers__.
 
 - __delete__: simply frees up dynamically allocated memory, so that it becomes available for future use. It's reccomended to delete a given allocation when finished using related data it.
 	```c
@@ -1845,7 +1843,7 @@ int main() {
 ```
 
 ### Dynamic Allocation of Objects
-While normally dealing with objects in the _stack_, memory is allocated _constructor_ and released by _destructor_ when objects go out of scope. The same thing can be done dynamically in the _heap_ using _pointers_ and _new_/_delete_ operators:
+While normally dealing with objects in the _stack_, memory is allocated _constructor_ and released by _destructor_ when objects go out of scope. The same thing can be done dynamically in the _heap_ using _pointers_ and new/delete operators:
 ```c
 #include <iostream>
 using namespace std;
