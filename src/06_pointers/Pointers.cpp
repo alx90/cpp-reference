@@ -39,6 +39,13 @@ void Pointers::printWithPointer(int *numberToPrint) {
 }
 
 /*
+ * 5.1 Same as 5 but using reference instead of pointer
+ */
+void Pointers::printWithReference(int &numberToPrint) {
+	cout << numberToPrint;
+}
+
+/*
  * 6. Write a program to find out the greatest and the smallest among three numbers using pointers.
  */
 void Pointers::maxFinder(int *a, int *b, int *c) {

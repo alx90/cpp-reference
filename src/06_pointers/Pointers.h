@@ -19,6 +19,7 @@ public:
 
 	void pointerReferences();
 	void printWithPointer(int *numberToPrint);
+	void printWithReference(int &numberToPrint);
 	void maxFinder(int *a, int *b, int *c);
 	void swapWithPointers(float *a, float *b);
 };

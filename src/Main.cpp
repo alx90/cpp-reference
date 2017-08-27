@@ -24,6 +24,7 @@
 #include "13_multi-inheritance/Mammal.h"
 #include "13_multi-inheritance/MarineAnimal.h"
 #include "13_multi-inheritance/BlueWhale.h"
+#include "14_call-by-reference/CallByReference.h"
 
 /*
  * all examples are in this main, just uncomment the examples you want to execute
@@ -72,6 +73,8 @@ int main() {
 	// 2
 //	int i = 190;
 //	pointers.printWithPointer(&i);
+	// 2.1
+//	pointers.printWithReference(i);
 	// 3
 //	int a=1000,b=78,c=3;
 //	pointers.maxFinder(&a, &b, &c);
@@ -211,6 +214,21 @@ int main() {
 //	b.printMammal();
 //	b.printMarineAnimal();
 //	b.printBlueWhale();
+
+	// CALL-BY-REFERENCE
+	CallByReference callByReference;
+	int num1 = 1, num2 = 2;
+	/*
+	 * 1. Ex of call by reference using POINTERS
+	 */
+//	callByReference.swapWithPointers( &num1, &num2);
+	/*
+	 * 2. Ex of call by reference using REFERENCES
+	 */
+	callByReference.swapWithReferences( num1, num2 );
+	// real values DO change
+	cout << "First number = " << num1 << endl;	// prints 2
+	cout << "Second number = " << num2 << endl;	// prints 1
 
 	return 0;
 }

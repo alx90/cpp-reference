@@ -110,7 +110,7 @@ _notes:_
 
 ### Booleans and conditions evaluation
 Unlike in C, in C++ booleans have a dedicated data type, but underneath they are still treated like simple numeric values (0 and 1).<br>
-Considering this, all conditions in C++ can be written using both booleans or numbers, anyway they will always be evaluated underneath like __false if equal to 0__ and __true if different from 0__. Ex: 
+Considering this, all conditions in C++ can be written using both booleans or numbers, anyway they will always be evaluated underneath like __false if equal to 0__ and __true if different from 0__. Ex:
 ```c
 // Ex.
 if(false)	// false
@@ -136,7 +136,7 @@ cout << true	// 1
 C++ programs are pre-processed before being executed. The pre-processor simply replaces all pre-processor directives with the corresponding code. __All directives starting with a # symbol are pre-processor directives__.<br>
 Most common pre-processor directives are:
 - __#include__: inclusions are replaced by pre-processor before execution making header files available in our program.
-- __#define__: is used to define _constant values_ or _macros_ that will be available globally in the program. Pre-processor replaces the objects using #define around the program with their value, or macro code, before execution. 
+- __#define__: is used to define _constant values_ or _macros_ that will be available globally in the program. Pre-processor replaces the objects using #define around the program with their value, or macro code, before execution.
 
 # BASIC REFERENCE
 
@@ -204,7 +204,7 @@ typedef struct student {	// giving the struct "student" the alias "st"
 } st;
 int main(){
 	st p1;	// using the alias for student
-	p1.roll_no = 1; 
+	p1.roll_no = 1;
   	cout << "roll no : " << p1.roll_no << endl;
 	return 0;
 }
@@ -241,9 +241,9 @@ friend keyword is used to grant the access to the private and protected members 
 	    friend class B;	// B is declared as a friend of A
 	};
 	class B {
-	
+
 	};
-	
+
 	// Ex.
 	#include <iostream>
 	using namespace std;
@@ -308,18 +308,16 @@ _assuming a=1 and b=0_
 |&&|Logical AND. If both the operands are non-zero, then the condition becomes true|a&&b is 0|
 |&#124;&#124;|Logical OR. If any one or both the operands are non-zero, then the condition becomes true|a&#124;&#124;b is 1|
 |!|Logical NOT. It is used to reverse the condition. So, if a condition is true, ! makes it false and vice versa.|!a is 0|
- -------- ------------------------------------------------------------------------- ---------------
 
 ##### assignment operators
- Operator Description                                                                                            Example
- -------- ------------------------------------------------------------------------------------------------------ ----------------- 
-|=        Assigns value of right operand to left operand                                                         C = A+B|
-|+=       Adds the value of right operand to left operand and assigns the final value to the left operand        C+=A is same as C=C+A|
-|-=       Subtracts the value of right operand from left operand and assigns the final value to the left operand C-=A is same as C=C-A|
-|*=       Multiplies the value right operand to left operand and assigns the final value to the left operand     C&ast;=A is same as C=C&ast;A|
-|/=       Divides the value of left operand from right operand and assigns the final value to the left operand   C/=A is same as C=C/A|
-|%=       Takes modulus using two operands and assigns the result to the left operand                            C%=A is same as C=C%A|
- -------- ----------------------------------------------------------------------------------------------------- ----------------
+|Operator|Description                                                                                           |Example                      |
+|--------|------------------------------------------------------------------------------------------------------|-----------------------------|
+|=       |Assigns value of right operand to left operand                                                        |C = A+B                      |
+|+=      |Adds the value of right operand to left operand and assigns the final value to the left operand       |C+=A is same as C=C+A        |
+|-=      |Subtracts the value of right operand from left operand and assigns the final value to the left operand|C-=A is same as C=C-A        |
+|*=      |Multiplies the value right operand to left operand and assigns the final value to the left operand    |C&ast;=A is same as C=C&ast;A|
+|/=      |Divides the value of left operand from right operand and assigns the final value to the left operand  |C/=A is same as C=C/A        |
+|%=      |Takes modulus using two operands and assigns the result to the left operand                           |C%=A is same as C=C%A        |
 
 ##### increment and decrement operators
 - __++__ operator increments by 1 the value of an integer var
@@ -456,7 +454,7 @@ int main() {
 	return 0;
 }
 ```
-_note: No need to write break in default case because it automatically terminates once default statements are executed._ 
+_note: No need to write break in default case because it automatically terminates once default statements are executed._
 
 ### Loops
 All loops in C++ are identical to Java. Also __break _(jump out of the loop)___ and __continue _(jump to the next iteration)___ statements are the same.
@@ -520,7 +518,7 @@ int main() {
 In C++ is used to iterate over arrays .
 ```c
 #include <iostream>
- 
+
 int main() {
 	using namespace std;
 	int ar[] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -555,7 +553,7 @@ A C++ assignment is identified by the following members
 ```c
 leftValue = rightValue
 ```
-- __leftValue__ is a value which has an address and is usually a variable. 
+- __leftValue__ is a value which has an address and is usually a variable.
 - __rightValue__ is the value assigned to the leftValue and can be either a variable, a function or a literal.
 Here is an example of assignments using literals for various data types:
 ```c
@@ -597,43 +595,43 @@ _note_: C++ performs even implicit casting on vars the same way java does.
 
 ### Variables Scope
 Variables can either be:
-- __local__: accessible only within the function or __block _(group of statements enclosed within curly braces { }. Ex: function body, if body, etc)___ they are declared in.
-```c
-#include <iostream>
-using namespace std;
-
-int multiply(int a, int b){	// a and b are copies of x,y, so x,y won't get modified
-        return a * b;
-}
-
-int main() {
-        int x = 3, y = 5, z;	// local vars
-        z = multiply( x, y );	// normally calling function passing by value
-        cout << z << endl;
-        return 0;
-}
-```
+- __local__: accessible only __within the function or block__(any group of statements enclosed within curly braces like function body, if, etc) they are declared in.
+	```c
+	#include <iostream>
+	using namespace std;
+	
+	int multiply(int a, int b){	// a and b are copies of x,y, so x,y won't get modified
+	        return a * b;
+	}
+	
+	int main() {
+	        int x = 3, y = 5, z;	// local vars
+	        z = multiply( x, y );	// normally calling function passing by value
+	        cout << z << endl;
+	        return 0;
+	}
+	```
 - __global__: can be accessed by any function in the program.
-```c
-#include <iostream>
-
-using namespace std;
-
-int g = 10;	// global var
-
-void func1(){
-	g = 20;	// actually modifying the global var g 
-	cout << g << endl;
-}
-
-int main(){
-	func1();
-	g = 30;	// actually modifying the global var g 
-	cout << g << endl;
-	return 0;
-}
-```
-_note: to make a global var defined in one file usable in another file it needs to be declared as __extern__ (see [storage classes](#storage-classes))_
+	```c
+	#include <iostream>
+	
+	using namespace std;
+	
+	int g = 10;	// global var
+	
+	void func1(){
+		g = 20;	// actually modifying the global var g
+		cout << g << endl;
+	}
+	
+	int main(){
+		func1();
+		g = 30;	// actually modifying the global var g
+		cout << g << endl;
+		return 0;
+	}
+	```
+	_note: to make a global var defined in one file usable in another file it needs to be declared as __extern__ (see [storage classes](#storage-classes))_
 
 ### Storage Classes
 Underneath the compiler stores some information about variables (scope, lifetime, etc) in special classes called storage classes. Each storage class is identified by a keyword:
@@ -643,7 +641,7 @@ Underneath the compiler stores some information about variables (scope, lifetime
 	// Ex.
 	my_header.h
 		extern int g;	// declaring var g as extern (can be used by external files)
-	
+
 	my_program.cpp
 		#include "my_header.h"
 		#include <iostream>
@@ -655,10 +653,10 @@ Underneath the compiler stores some information about variables (scope, lifetime
 	```
 - __static__: a variable declared as static once initialized, exists until the end of the program. static vars are visible only in the function, or at most in the file, they are declared in (unlike extern).
 - __register__: when declaring a var using the register keyword, the var itself will not be stored in computer memory (RAM) as usual, but it will be stored in a register. The usage of this keyword depends on the hw the program is running on.
-- __mutable__: see const objects.
+- __mutable__: see __const objects__.
 
 # CONSTANTS
-Constants are elements whose __value is assigned at time of declaration and can never change__ later throughout the program. __Constants elemts are identified by the _const_ keyword__, that can be applied to different elements.
+Constants are elements whose __value is assigned at time of declaration and can never change__ later throughout the program. __Constants are identified by the _const_ keyword__, that can be applied to different elements.
 
 ### Constant Variables
 Cannot change once declared
@@ -702,7 +700,7 @@ Classes can have:
 		return 0;
 	}
 	```
-	
+
 - __const function members__: cannot change the value of any data member of the class and cannot call any member function which is not constant
 	```c
 	class A {
@@ -714,7 +712,7 @@ Classes can have:
 	};
 	```
 	_note: constructors cannot be const_
-	
+
 - __const objects__: are declared const, their members are initialized through constructor and can never change later
 	```c
 	#include <iostream>
@@ -773,49 +771,48 @@ average( num1, num2 );
 In order to properly call a function, it must be defined __before__ the point where I am making the call.
 So assuming we want to call a "sayHello" function from our main function we have several ways to do it:
 - Define and implement the function before calling it:
-```c
-#include <iostream>
-using namespace std;
-
-void sayHello() { // declaring sayHello function 
-    cout << "Hello!" << endl; // implementing sayHello function
-}
-
-int main(){
-	sayHello();
-	return 0;
-}
-```
-
+	```c
+	#include <iostream>
+	using namespace std;
+	
+	void sayHello() { // declaring sayHello function
+	    cout << "Hello!" << endl; // implementing sayHello function
+	}
+	
+	int main(){
+		sayHello();
+		return 0;
+	}
+	```
 - Define the function before the call and implementing it after the call
-```c
-#include <iostream>
-using namespace std;
-void sayHello(); // declaring sayHello function
-int main(){
-	sayHello();
-	return 0;
-}
-void sayHello() {
-    cout << "Hello!" << endl; // implementing sayHello function
-}
-```
-
+	```c
+	#include <iostream>
+	using namespace std;
+	void sayHello(); // declaring sayHello function
+	int main(){
+		sayHello();
+		return 0;
+	}
+	void sayHello() {
+	    cout << "Hello!" << endl; // implementing sayHello function
+	}
+	```
 - Implement the function in a dedicated Class (.cpp) and declare it in the related header (.h), then simply include the header in the main() file
-```c
-#include <Hello.h>
+	```c
+	#include <Hello.h>
+	
+	int main(){
+		Hello hello;
+		hello.sayHello();
+		return 0;
+	}
+	```
 
-int main(){
-	Hello hello;
-	hello.sayHello();
-	return 0;
-}
-```
 ### Recursion
 Obviously any function (not only the main) can call other functions if they are defined before the call, and even a function calling itself is permitted (recursion) even if it's a borderline case.
 
 ### Inline Functions
-When calling a function, first the function first gets called and then its body gets executed. Obviously it takes comparatively more time to call a function and execute its code than to execute the code directly without any function call. <br>
+When calling a function, first the function gets called and then its body gets executed. Obviously it takes comparatively more time to call a function and execute its code than to execute the code directly without any function call. <br>
 By using the keyword __inline__ when declaring a function, the compiler will replace the function call, straight with the code inside the function, saving the time that is taken for the call. Ex:
 ```c
 #include <iostream>
@@ -844,7 +841,7 @@ int a = 10;	// generic var definition
 - __a__ is the __value__ of  the var and corresponds to __10__
 - __&a__ (_address-of_ operator) is the __address__ of the var and corresponds to something like __0xffff377c__ (just an example)
 
-__A pointer is a variable that stores a memory address__. When storing the memory address of a var __a__ into a pointer __p__, then __p points to a__. 
+__A pointer is a variable that stores a memory address__. When storing the memory address of a var __a__ into a pointer __p__, then __p points to a__.
 ```c
 <variable_type> *<name>; // pointer declaration syntax
 
@@ -865,7 +862,7 @@ call_to_function_expecting_memory_address(pointer);
 Here is an example to understand the nature of all different elements involved:
 ```c
 // Ex.
-#include <iostream> 
+#include <iostream>
 using namespace std;
 int main(){
 	int a = 10; 			// value=10, address=0xffff377c
@@ -881,55 +878,71 @@ int main(){
 
 ### "Call by Value" and "Call By Reference"
 - In normal function calls __(call by value)__, the parameters of a function are copies of the arguments passed in. So altering the parameters within the function won't affect the real values.
-```c
-// Ex:
-#include <iostream> 
-
-using namespace std;
-
-void swap( int a, int b ) {
-	int t; 
-	t = a; 
-	a = b; 
-	b = t; 
-}
-
-int main(){
-	int num1 = 1, num2 = 2; 
-	swap( num1, num2);
-	// real values does NOT change
-	cout << "First number = " << num1 << endl; // prints 1
-	cout << "Second number = " << num2 << endl; // prints 2
-	return 0;
-}
-```
-- In call by reference, we pass the address of variables to the function. Passing address is like passing originals, so altering the parameters will alter the real values too.
-```c
-// Ex:
-#include <iostream> 
-
-using namespace std;
-
-void swap( int *a, int *b ) {
-	int t; 
-	t = *a; 
-	*a = *b; 
-	*b = t; 
-}
-
-int main(){
-	int num1 = 1, num2 = 2; 
-	swap( &num1, &num2);
-	// real values DO change
-	cout << "First number = " << num1 << endl;	// prints 2
-	cout << "Second number = " << num2 << endl;	// prints 1
-	return 0;
-}
-```
-Note that to properly call by reference:
-- The caller passes var addresses __&num1__
-- The called function exposes __*a__ pointer args
-- The called function works on whole __*a__ parameters in order to modify actual values
+	```c
+	// Ex:
+	#include <iostream>
+	
+	using namespace std;
+	
+	void swap( int a, int b ) {
+		int t;
+		t = a;
+		a = b;
+		b = t;
+	}
+	
+	int main(){
+		int num1 = 1, num2 = 2;
+		swap( num1, num2);
+		// real values does NOT change
+		cout << "First number = " << num1 << endl; // prints 1
+		cout << "Second number = " << num2 << endl; // prints 2
+		return 0;
+	}
+	```
+- In call by reference, we pass the address of variables to the function. Passing address is like passing originals, so altering the parameters will alter the real values too. Call by reference can be performed using pointers or references, here are examples of both ways:
+	```c
+	// Ex of call by reference using POINTERS
+	#include <iostream>
+	using namespace std;
+	
+	// function using pointers
+	void swapWithPointers( int *a, int *b ) {
+		int t;
+		t = *a;
+		*a = *b;
+		*b = t;
+	}
+	// function using references
+	void swapWithReferences( int& a, int& b ) {
+		int t;
+		t = a;
+		a = b;
+		b = t;
+	}
+	
+	int main(){
+		int num1 = 1, num2 = 2;
+		swapWithPointers( &num1, &num2);	// call by reference with pointers
+		// -OR-
+		swapWithReferences( num1, num2);	// call by reference with references
+		// real values DO change
+		cout << "First number = " << num1 << endl;	// prints 2
+		cout << "Second number = " << num2 << endl;	// prints 1
+		return 0;
+	}
+	```
+	
+	1. __Using Pointers__:
+		- The caller passes var addresses __&num1__
+		- The called function exposes __*a__ pointer args
+		- The called function works on whole __*a__ parameters in order to modify actual values
+	2. __Using References__:
+		- The caller passes var value __num1__
+		- The called function exposes __&a__ reference args
+		- The called function works on simple __a__ parameters in order to modify actual values
+	
+_Note: one of the main differences between using pointers or references in call by reference, is that, unlike pointers, references cannot be null. Anyway a reference can still be invalid, so using references is not necessarily safer than using pointers._
 
 # STORAGE DATA-STRUCTURES
 
@@ -962,7 +975,7 @@ When an array name is used as an expression, it refers to a pointer to the first
 int age[50];
 int *ptr;
 ptr = age;	// Gives the memory address of the first array element without a reference operator(&)
-``
+```
 As opposed of what you would do to create a pointer to a var
 ```c
 int *ptr;
@@ -972,7 +985,7 @@ ptr = &num; // Requires & to give the memory address to the ptr
 note that __&ast;p__, __&ast;(p+1)__, __&ast;(p+2)__, ... give access to the array __element values__.
 
 ##### passing an array to a function
-Entire arrays cannot be passed to functions, but what we do is passing the array name. Actually the array name is the address of the 
+Entire arrays cannot be passed to functions, but what we do is passing the array name. Actually the array name is the address of the
 first element of the array itself and that is in fact a reference to the array. So de facto arrays gets always passed by reference.
 ```c
 #include <iostream>
@@ -1011,7 +1024,7 @@ int main() {
 ```
 The same can be done using a pointer:
 ```c
-#include <iostream> 
+#include <iostream>
 using namespace std;
 void display(int *p) {
     int i;
@@ -1021,8 +1034,8 @@ void display(int *p) {
     }
 }
 int main() {
-    int size,j; 
-    int n[ ] = { 1, 2, 3, 4, 5, 6, 7, 8 }; 
+    int size,j;
+    int n[ ] = { 1, 2, 3, 4, 5, 6, 7, 8 };
     display(n);
     return 0;
 }
@@ -1099,8 +1112,8 @@ int main() {
 }
 ```
 ##### C-style strings
-As already said, basic C++ strings are simple arrays and like array are very low level objects. 
-The _string_ template from the standard library (_std::string_) can  be used in order to have more facilities, 
+As already said, basic C++ strings are simple arrays and like array are very low level objects.
+The _string_ template from the standard library (_std::string_) can  be used in order to have more facilities,
 anyway the library __cstring__ exposes some basic utility functions on C-style strings too, here is the list:
 
 |Function|Use|
@@ -1122,8 +1135,8 @@ Here is an example of usage of the __cstring__ library:
 #include <cstring>
 using namespace std;
 int main(){
-	char s2[ ]= "Hello"; 
-  	char s1[10]; 
+	char s2[ ]= "Hello";
+  	char s1[10];
   	strcpy(s1, s2);
   	cout << "Source string " << s2 << endl;	// prints hello
   	cout << "Target string " << s1 << endl;	// prints hello
@@ -1143,9 +1156,9 @@ struct structure_name {
 
 // Ex.
 struct student {
-    int id;
-    std::string name;
-    int phoneNumber;
+	int id;
+	std::string name;
+	int phoneNumber;
 };
 ```
 Here is an example of usage of a structure:
@@ -1155,16 +1168,16 @@ Here is an example of usage of a structure:
 using namespace std;
 int main(){
 	struct student 	{
-  		int id;
-  		string name;
+		int id;
+		string name;
 		int phoneNumber;
 	};
 	struct student p1 = {1,"Brown",123443};	// inline struc initialization
   	struct student p2, p3=p1 ;		// copying p1 into p3
   	// standard struct initialization
-  	p2.id = 2; 
+  	p2.id = 2;
   	p2.name = "Sam";
-  	p2.phoneNumber = 1234567822; 
+  	p2.phoneNumber = 1234567822;
   	cout << "First Student" << endl;
   	cout << "id : " << p1.id << endl;
   	cout << "name : " << p1.name << endl;
@@ -1193,8 +1206,8 @@ __1. Pass by value__ (passing a copy of the struct):
 using namespace std;
 struct student {
 	int id;
-  	string name;
-  	int phoneNumber;
+	string name;
+	int phoneNumber;
 };
 void display(struct student st) {
   	cout << "id : " << st.id << endl;
@@ -1204,7 +1217,7 @@ void display(struct student st) {
 int main(){
 	struct student s;
   	s.id = 4;
-  	s.name = "Ron"; 
+  	s.name = "Ron";
   	s.phoneNumber = 888888;
   	display(s);
 	return 0;
@@ -1217,8 +1230,8 @@ __2. Pass by reference__ (modifying the original struct):
 using namespace std;
 struct student {
 	int id;
-  	string name;
-  	int phoneNumber;
+	string name;
+	int phoneNumber;
 };
 void display(struct student *st) {
   	cout << "id : " << st -> id << endl;
@@ -1228,7 +1241,7 @@ void display(struct student *st) {
 int main() {
 	struct student s;
   	s.id = 4;
-  	s.name = "Ron"; 
+  	s.name = "Ron";
   	s.phoneNumber = 888888;
   	display(&s;);
 	return 0;
@@ -1264,7 +1277,7 @@ union unionName {	// union syntax, same as struct but with union keyword
 	data-type member-3;
 };
 ```
-The only difference between unions and structures is the way they are handled in memory. 
+The only difference between unions and structures is the way they are handled in memory.
 - __the amount of memory required to store a structure is the sum of the memory sizes of all its members__
 	```c
 	struct student1 {         // defining a struct
@@ -1274,17 +1287,17 @@ The only difference between unions and structures is the way they are handled in
 	};
 	```
 	_this struct occupies 4 + 40 + 4 = 48bytes_
-	
+
 - __the memory size of a union is equal to the size of its member occupying the maximum space in the memory__
 	```c
 	union student2 {          // defining a union
 		int roll_no;
-	  	char name[40];
-	  	int phone_number;
+		char name[40];
+		int phone_number;
 	};
 	```
 	_this union occupies 40 bytes_
-	
+
 The disadvantage of using a union instead of a struct is that __memebers of a union can be accessed only one at a time__ because the physical location to write them is the same. So if I write 2 different members of the union one after the other, when writing the second the location will be overwritten and the value of the first member will get corrupted (retrieving the first member will return a random value).
 ```c
 #include <iostream>
@@ -1298,8 +1311,8 @@ union student {
 int main() {
 	union student p1;
 	p1.roll_no = 1;
-	p1.phone_number = 1234567822; 
-	strcpy(p1.name,"Brown"); 
+	p1.phone_number = 1234567822;
+	strcpy(p1.name,"Brown");
 	cout << "roll_no : " << p1.roll_no << endl;		// prints some random value
 	cout << "phone_number : " << p1.phone_number << endl;	// prints some random value
 	cout << "name : " << p1.name << endl;			// prints "Brown"
@@ -1343,10 +1356,10 @@ enum class enum_name {
 
 // Ex.
 #include <iostream>
-enum class Season { 
-    Summer, 
-    Spring, 
-    Winter, 
+enum class Season {
+    Summer,
+    Spring,
+    Winter,
     Autumn
 };
 enum class Color {
@@ -1375,9 +1388,9 @@ A __class__ is a generalization of a certain data structure:
 ```c
 // Ex.
 #include <iostream>
- 
+
 using namespace std;
- 
+
 class Rectangle {
 	public:
 		/*
@@ -1423,7 +1436,7 @@ int main() {
 	Rectangle rt;	// creating a Rectangle object     
 	rt.setLength(7);	// calling member functions on the created object using the . syntax
 	rt.setBreadth(4);
-	int area = rt.getArea();	
+	int area = rt.getArea();
 	cout << "Area : " << area << endl;
 	return 0;
 }
@@ -1431,7 +1444,7 @@ int main() {
 - Objects can be stored into arrays using the syntax:
 	```c
 	Classname arrayName[size];
-	
+
 	// Ex.
 	Student students[5];
 	```
@@ -1451,9 +1464,9 @@ Classname::staticMember
 
 // Ex.
 #include <iostream>
- 
+
 using namespace std;
- 
+
 class Rectangle {
 	public:
 		static void printArea( int l, int b ) {	// static function member
@@ -1469,12 +1482,12 @@ int main() {
 
 ### Initialization List
 Is a particular way of initializing class members when calling the constructor. It can be used anytime instead of the standard constructor syntax, anyway it needs to be used in some specific cases:
-- Initialize a data member that is defined as __const__: 
+- Initialize a data member that is defined as __const__:
 	```c
 	#include <iostream>
-	
+
 	using namespace std;
-	
+
 	class Rectangle {
 		const int length;
 		const int breadth;
@@ -1485,14 +1498,14 @@ Is a particular way of initializing class members when calling the constructor. 
 				return length * breadth;
 			}
 	};
-	
+
 	int main() {
 		Rectangle rt( 7, 4 );
 		cout << rt.printArea() << endl;
 		return 0;
 	}
 	```
-- See __"Constructor in sub-classes"__ -> _"Calling parent-class parameterized constructor"_ paragraph 
+- See __"Constructor in sub-classes"__ -> _"Calling parent-class parameterized constructor"_ paragraph
 
 ### Inheritance
 C++ supports all standard types of inheritance (single, multilevel, hierarchical, etc) with the definition of parent-classes and sub-classes.<br>
@@ -1529,21 +1542,21 @@ class Rectangle: public Polygon { // class extension syntax
 	#include <iostream>
 
 	using namespace std;
-	
+
 	class A 	{
 		public:
 			A() {
 				cout << "Constructor of A" << endl;
 			}
 	};
-	
+
 	class B : public A {	// B extends A
 		public:
 			B() {
 				cout << "Constructor of B" << endl;
 			}
 	};
-	
+
 	int main() {
 		B b;	// prints: "Constructor of A" "Constructor of B"
 		return 0;
@@ -1634,85 +1647,73 @@ int main() {
 ##### Overloading
 1. Constructor Overloading
 __Constructor overloading allows__ to have __multiple constructors__ in the same class but __with different arguments__.
-```c
-// Ex.
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-class Student {
-	string name;
-	public:
-		Student() {	// constructor 1
-			name = "unknown";
-		}
-		Student( string n ) {	constructor 2
-			name = n;
-		}
-		
-		void printName() {
-			cout << name << endl;
-		}
-};
-
-int main() {
-	Student a( "xyz" );
-	Student b;
-	a.printName();	// prints xyz
-	b.printName();	// prints unknown
-	return 0;
-}
-```
+	```c
+	// Ex.
+	#include <iostream>
+	#include <string>
+	using namespace std;
+	class Student {
+		string name;
+		public:
+			Student() {	// constructor 1
+				name = "unknown";
+			}
+			Student( string n ) {	// constructor 2
+				name = n;
+			}
+			void printName() {
+				cout << name << endl;
+			}
+	};
+	int main() {
+		Student a( "xyz" );
+		Student b;
+		a.printName();	// prints xyz
+		b.printName();	// prints unknown
+		return 0;
+	}
+	```
 
 2. Function Overloading
 A function in a class can be overloaded by any number of other functions having __same name__ and __different arguments__:
-```c
-// Ex.
-#include <iostream>
-
-using namespace std;
-
-class Rectangle {
-	public:
-		void printArea(int x, int y) {
-			cout << x * y << endl;
-		}
-		void printArea(double x, double y) {
-			cout << x * x << endl;
-		}
-};
-
-int main() {
-	Rectangle rt;
-	rt.printArea(2, 4);
-	rt.printArea(1.7, 4.6);
-	return 0;
-}
-``` 
+	```c
+	// Ex.
+	#include <iostream>
+	using namespace std;
+	class Rectangle {
+		public:
+			void printArea(int x, int y) {
+				cout << x * y << endl;
+			}
+			void printArea(double x, double y) {
+				cout << x * x << endl;
+			}
+	};
+	int main() {
+		Rectangle rt;
+		rt.printArea(2, 4);
+		rt.printArea(1.7, 4.6);
+		return 0;
+	}
+	```
 
 ##### Overriding
 Overriding mechanism refers to a parent-class and sub-class situation where the sub-class redefines a parent function, changing its behavior. All child objects will recall the redefined version of the function (__Polymorphism__).
-
 ```c
 #include <iostream>
-
 using namespace std;
-
 class Animals {
 	public:
 		void sayHi() {
 			cout << "Hi, i'm an ANIMAL" << endl;
 		}
 };
-
 class Dogs : public Animals {	// Dogs extends Animals
 	public:
 		void sayHi() {
 			cout << "Hi, i'm a DOG" << endl;
 		}
 };
-
 int main() {
 	Dogs d;
 	d.sayHi();	// prints "Hi, i'm a DOG"
@@ -1738,28 +1739,24 @@ Is a __class that contains at least one pure virtual function and whose objects 
 __Subclasses of an abstract base-class must define the abstract methods__, otherwise, they will also become abstract classes.  
 ```c
 #include <iostream>
-
 using namespace std;
-
 class Animals {	// abstract class definition
 	public:
 		virtual void sound() = 0;	// pure virtual function
 };
-
 class Dogs : public Animals {	// Dogs is a concrete implementation of Animals
 	public:
 		void sound() {
 			cout << "Woof" << endl;
 		}
 };
-
 int main() {
 	Dogs d;
 	d.sound();
 	return 0;
 }
 ```
-_note: when implementing a pure virtual function in a sub-class the compiler binds the function into the call at runtime (__late binding__), unlike in all standard functions definition where binding function calls with function bodies is done at compile time (_early binding_).
+_note: when implementing a pure virtual function in a sub-class the compiler binds the function into the call at runtime (__late binding__), unlike in all standard functions definition where binding function calls with function bodies is done at compile time (__early binding__)._
 
 ##### Interface
 Is an __abstract class in which all functions are pure virtual and there are no member variables__. When implementing an interface all pure virtual functions must be implemented in the sub-classes. Like in abstract classes, it's impossible to instantiate objects of an interface. __The naming for interfaces usually begins with a capital I__:
@@ -1812,8 +1809,8 @@ This is the way of dynamically allocating a variable _data_:
 	```
 	_note that we use pointers to allocate memory dynamically._<br>
 	This simple dynamic var declaration will allocate in memory the space of an integer for our var.
-	
-	 
+
+
 - __delete__: simply frees up dynamically allocated memory, so that it becomes available for future use. It's reccomended to delete a given allocation when finished using related data it.
 	```c
 	delete (data);
@@ -1854,11 +1851,11 @@ While normally dealing with objects in the _stack_, memory is allocated _constru
 using namespace std;
 class A {
 	 public:
-       	A() { 
-    	  cout << "Constructor" << endl; 
+       	A() {
+    	  cout << "Constructor" << endl;
       	}
-       	~A() { 
-    	   cout << "Destructor" << endl; 
+       	~A() {
+    	   cout << "Destructor" << endl;
         }
 };
 int main() {
@@ -1879,11 +1876,11 @@ template<class T> T functionName(T x, T y) {	// template function definition
 	return ...;
 }
 /*
- * note that the generic type T used in the declaration is just an identifier of a generic data-type. 
- * It could have been every other identifier or even more than one identifier could be used in case 
+ * note that the generic type T used in the declaration is just an identifier of a generic data-type.
+ * It could have been every other identifier or even more than one identifier could be used in case
  * the class handles several generic arguments [Ex. template<class T1, class T2> T2 functionName(T1 x, T2 y) ].
  */
- 
+
 // Ex.
 #include <iostream>
 using namespace std;
@@ -1965,7 +1962,7 @@ int main(){
   file >> text;		// reading from file using >> operator
   cout << text << endl;
   //closing the file
-  file.close();		// always close opened files 
+  file.close();		// always close opened files
   return 0;
 }
 ```
